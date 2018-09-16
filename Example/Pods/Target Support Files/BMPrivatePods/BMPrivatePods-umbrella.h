@@ -13,7 +13,7 @@
 #import "UIColor+BMGradient.h"
 #import "UIColor+BMHEX.h"
 #import "UIColor+Modify.h"
-#import "UIColor+Random.h"
+#import "UIColor+BMRandom.h"
 #import "UIColor+Web.h"
 #import "UIScreen+BMFrame.h"
 

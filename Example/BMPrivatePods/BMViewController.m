@@ -7,7 +7,7 @@
 //
 
 #import "BMViewController.h"
-#import "UIColor+BMHEX.h"
+#import "UIColor+Modify.h"
 
 @interface BMViewController ()
 
@@ -22,6 +22,14 @@
     UIView *v = [UIView new];
     [self.view addSubview:v];
     v.frame = CGRectMake(0, 0, 300, 300);
+    UIColor *c = [UIColor redColor];
+    
+//    v.backgroundColor = [UIColor redColor];
+    [UIView animateWithDuration:2 animations:^{
+        [c darkenColor:0.1];
+        v.backgroundColor = c;
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning
