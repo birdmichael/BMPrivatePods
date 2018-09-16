@@ -30,15 +30,14 @@ BirdMichal 日常所用到一些私有分类等 -- Private Pods
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'BMPrivatePods/BMPrivatePods/**/*'
+  # s.source_files = 'BMPrivatePods/BMPrivatePods/**/*'
 
   s.subspec 'UIColor' do |uicolor|
       uicolor.source_files = 'BMPrivatePods/BMPrivatePods/UIColor/**/*'
-      uicolor.public_header_files = 'BMPrivatePods/BMPrivatePods/UIColor/**/*.h'
+      # uicolor.dependency
   end
    s.subspec 'UIScreen' do |uiscreen|
       uiscreen.source_files = 'BMPrivatePods/BMPrivatePods/UIScreen/**/*'
-      uiscreen.public_header_files = 'BMPrivatePods/BMPrivatePods/UIScreen/**/*.h'
   end
   # s.resource_bundles = {
   #   'BMPrivatePods' => ['BMPrivatePods/Assets/*.png']
