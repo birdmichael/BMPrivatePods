@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1CE8A9B4E19E01E3736B6022 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1CE8A9B4E19E01E3736B6022 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		341C1DB8CF51519BB348D6FC /* Pods_BMPrivatePods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMPrivatePods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D598445F0D60E96C2345CE /* Pods-BMPrivatePods_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMPrivatePods_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMPrivatePods_Example/Pods-BMPrivatePods_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5D597E949C8A58FFDD7FB6D7 /* Pods_BMPrivatePods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMPrivatePods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,9 +61,9 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		66159F3AD5883F74464FF661 /* Pods-BMPrivatePods_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMPrivatePods_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMPrivatePods_Example/Pods-BMPrivatePods_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6A74A6E924A2A3E39E0F9E2E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6A74A6E924A2A3E39E0F9E2E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7A1CFC47FB9C2C3CF5995694 /* BMPrivatePods.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = BMPrivatePods.podspec; path = ../BMPrivatePods.podspec; sourceTree = "<group>"; };
+		7A1CFC47FB9C2C3CF5995694 /* BMPrivatePods.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BMPrivatePods.podspec; path = ../BMPrivatePods.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7D77D669F3A08DA477D99265 /* Pods-BMPrivatePods_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMPrivatePods_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMPrivatePods_Tests/Pods-BMPrivatePods_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4BA2E98E698A901A1EB91FA /* Pods-BMPrivatePods_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMPrivatePods_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMPrivatePods_Tests/Pods-BMPrivatePods_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				CED10EE13D31C55F247A5D37 /* [CP] Embed Pods Frameworks */,
+				90C11F8C311A72C522D1B9F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -248,6 +248,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = birdmichael;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = Q465ZYUGTC;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -355,7 +358,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CED10EE13D31C55F247A5D37 /* [CP] Embed Pods Frameworks */ = {
+		90C11F8C311A72C522D1B9F5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -510,6 +513,7 @@
 			baseConfigurationReference = 66159F3AD5883F74464FF661 /* Pods-BMPrivatePods_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q465ZYUGTC;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BMPrivatePods/BMPrivatePods-Prefix.pch";
 				INFOPLIST_FILE = "BMPrivatePods/BMPrivatePods-Info.plist";
@@ -525,6 +529,7 @@
 			baseConfigurationReference = 52D598445F0D60E96C2345CE /* Pods-BMPrivatePods_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q465ZYUGTC;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BMPrivatePods/BMPrivatePods-Prefix.pch";
 				INFOPLIST_FILE = "BMPrivatePods/BMPrivatePods-Info.plist";

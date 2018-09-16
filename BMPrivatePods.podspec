@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'BMPrivatePods/Classes/**/*'
+  s.source_files = 'BMPrivatePods/BMPrivatePods/**/*'
   
   # s.resource_bundles = {
   #   'BMPrivatePods' => ['BMPrivatePods/Assets/*.png']
