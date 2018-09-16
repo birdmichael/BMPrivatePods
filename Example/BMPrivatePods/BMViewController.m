@@ -22,6 +22,7 @@
     UIView *v = [UIView new];
     [self.view addSubview:v];
     v.frame = CGRectMake(0, 0, 300, 300);
+    v.backgroundColor = [UIColor bm_RandomColor];
     
 }
 

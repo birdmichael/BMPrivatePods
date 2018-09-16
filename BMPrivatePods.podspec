@@ -34,6 +34,7 @@ BirdMichal 日常所用到一些私有分类等 -- Private Pods
 
   s.subspec 'UIColor' do |uicolor|
       uicolor.source_files = 'BMPrivatePods/BMPrivatePods/UIColor/**/*'
+      uicolor.source_files
       # uicolor.dependency
   end
    s.subspec 'UIScreen' do |uiscreen|
