@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "Header.h"
 #import "UIColor+BMGradient.h"
 #import "UIColor+BMHEX.h"
 #import "UIColor+BMRandom.h"
