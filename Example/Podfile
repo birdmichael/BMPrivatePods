@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'BMPrivatePods_Example' do
+  pod 'BMPrivatePods', :path => '../'
+
+  target 'BMPrivatePods_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+    pod 'Expecta'
+    pod 'FBSnapshotTestCase'
+    pod 'Expecta+Snapshots'
+  end
+end
