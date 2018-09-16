@@ -1,48 +1,48 @@
 //
-//  UIScreen+Frame.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  UIScreen+BMFrame.m
+//  BMPrivatePods
 //
-//  Created by Jakey on 15/5/22.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  Created by BirdMichael on 2018/9/16.
 //
 
-#import "UIScreen+Frame.h"
+#import "UIScreen+BMFrame.h"
 
-@implementation UIScreen (Frame)
-+ (CGSize)size
+@implementation UIScreen (BMFrame)
+
++ (CGSize)bm_size
 {
     return [[UIScreen mainScreen] bounds].size;
 }
 
-+ (CGFloat)width
++ (CGFloat)bm_width
 {
     return [[UIScreen mainScreen] bounds].size.width;
 }
 
-+ (CGFloat)height
++ (CGFloat)bm_height
 {
     return [[UIScreen mainScreen] bounds].size.height;
 }
 
-+ (CGSize)orientationSize
++ (CGSize)bm_orientationSize
 {
     CGFloat systemVersion = [[[UIDevice currentDevice] systemVersion]
                              doubleValue];
     BOOL isLand =   UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation);
-    return (systemVersion>8.0 && isLand) ? SizeSWAP([UIScreen size]) : [UIScreen size];
+    return (systemVersion>8.0 && isLand) ? SizeSWAP([UIScreen bm_size]) : [UIScreen bm_size];
 }
 
-+ (CGFloat)orientationWidth
++ (CGFloat)bm_orientationWidth
 {
-    return [UIScreen orientationSize].width;
+    return [UIScreen bm_orientationSize].width;
 }
 
-+ (CGFloat)orientationHeight
++ (CGFloat)bm_orientationHeight
 {
-    return [UIScreen orientationSize].height;
+    return [UIScreen bm_orientationSize].height;
 }
 
-+ (CGSize)DPISize
++ (CGSize)bm_DPISize
 {
     CGSize size = [[UIScreen mainScreen] bounds].size;
     CGFloat scale = [[UIScreen mainScreen] scale];
@@ -56,4 +56,5 @@
 static inline CGSize SizeSWAP(CGSize size) {
     return CGSizeMake(size.height, size.width);
 }
+
 @end
