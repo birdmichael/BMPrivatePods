@@ -11,8 +11,6 @@
 #endif
 
 #import "UIColor+BMGradient.h"
-#import "UIColor+Gradient.h"
-#import "UIColor+HEX.h"
 #import "UIColor+Modify.h"
 #import "UIColor+Random.h"
 #import "UIColor+Web.h"
