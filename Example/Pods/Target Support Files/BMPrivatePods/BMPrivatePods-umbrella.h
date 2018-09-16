@@ -10,12 +10,13 @@
 #endif
 #endif
 
+#import "UIColor+BMGradient.h"
 #import "UIColor+Gradient.h"
 #import "UIColor+HEX.h"
 #import "UIColor+Modify.h"
 #import "UIColor+Random.h"
 #import "UIColor+Web.h"
-#import "UIScreen+Frame.h"
+#import "UIScreen+BMFrame.h"
 
 FOUNDATION_EXPORT double BMPrivatePodsVersionNumber;
 FOUNDATION_EXPORT const unsigned char BMPrivatePodsVersionString[];

@@ -1,12 +1,13 @@
 //
-//  UIColor+HEX.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  UIColor+BMHEX.m
+//  BMPrivatePods
 //
-//  Created by Jakey on 14/12/15.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Created by BirdMichael on 2018/9/16.
 //
 
-#import "UIColor+HEX.h"
+#import "UIColor+BMHEX.h"
+
+
 CGFloat colorComponentFrom(NSString *string, NSUInteger start, NSUInteger length) {
     NSString *substring = [string substringWithRange:NSMakeRange(start, length)];
     NSString *fullHex = length == 2 ? substring : [NSString stringWithFormat: @"%@%@", substring, substring];
@@ -16,18 +17,16 @@ CGFloat colorComponentFrom(NSString *string, NSUInteger start, NSUInteger length
     return hexComponent / 255.0;
 }
 
-@implementation UIColor (HEX)
-+ (UIColor *)colorWithHex:(UInt32)hex{
-    return [UIColor colorWithHex:hex andAlpha:1];
+@implementation UIColor (BMHEX)
+
++ (UIColor *)bm_colorWithHex:(UInt32)hex{
+    return [UIColor bm_colorWithHex:hex andAlpha:1];
 }
-+ (UIColor *)colorWithHex:(UInt32)hex andAlpha:(CGFloat)alpha{
-    return [UIColor colorWithRed:((hex >> 16) & 0xFF)/255.0
-                           green:((hex >> 8) & 0xFF)/255.0
-                            blue:(hex & 0xFF)/255.0
-                           alpha:alpha];
++ (UIColor *)bm_colorWithHex:(UInt32)hex andAlpha:(CGFloat)alpha{
+    return [UIColor colorWithRed:((hex >> 16) & 0xFF)/255.0 green:((hex >> 8) & 0xFF)/255.0 blue:(hex & 0xFF)/255.0 alpha:alpha];
 }
 
-+ (UIColor *)colorWithHexString:(NSString *)hexString {
++ (UIColor *)bm_colorWithHexString:(NSString *)hexString {
     CGFloat alpha, red, blue, green;
     
     NSString *colorString = [[hexString stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];
@@ -66,7 +65,7 @@ CGFloat colorComponentFrom(NSString *string, NSUInteger start, NSUInteger length
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-- (NSString *)HEXString{
+- (NSString *)bm_HEXString{
     UIColor* color = self;
     if (CGColorGetNumberOfComponents(color.CGColor) < 4) {
         const CGFloat *components = CGColorGetComponents(color.CGColor);
@@ -83,24 +82,15 @@ CGFloat colorComponentFrom(NSString *string, NSUInteger start, NSUInteger length
             (int)((CGColorGetComponents(color.CGColor))[2]*255.0)];
 }
 
-+ (UIColor *)colorWithWholeRed:(CGFloat)red
-                         green:(CGFloat)green
-                          blue:(CGFloat)blue
-                         alpha:(CGFloat)alpha
-{
-    return [UIColor colorWithRed:red/255.f
-                           green:green/255.f
-                            blue:blue/255.f
-                           alpha:alpha];
++ (UIColor *)bm_colorWithWholeRGBArray:(NSArray *)RGBArray alpha:(CGFloat)alpha {
+    CGFloat red = [RGBArray[0] floatValue];
+    CGFloat green = [RGBArray[1] floatValue];
+    CGFloat blue = [RGBArray[2] floatValue];
+    return [UIColor colorWithRed:red/255.f green:green/255.f blue:blue/255.f alpha:alpha];
+    
+}
++ (UIColor *)bm_colorWithWholeRGBArray:(NSArray<NSNumber *> *)RGBArray {
+    return [self bm_colorWithWholeRGBArray:RGBArray alpha:1.0];
 }
 
-+ (UIColor *)colorWithWholeRed:(CGFloat)red
-                         green:(CGFloat)green
-                          blue:(CGFloat)blue
-{
-    return [self colorWithWholeRed:red
-                             green:green
-                              blue:blue
-                             alpha:1.0];
-}
 @end

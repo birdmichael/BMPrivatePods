@@ -7,6 +7,7 @@
 //
 
 #import "BMViewController.h"
+#import "UIColor+BMGradient.h"
 
 @interface BMViewController ()
 
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UIView *v = [UIView new];
+    [self.view addSubview:v];
+    v.frame = CGRectMake(0, 0, 300, 300);
+    v.backgroundColor = [UIColor bm_gradientFromColor:[UIColor redColor] toColor:[UIColor blueColor] direction:BMGradientDirectionHorizontal withRange:100];
 }
 
 - (void)didReceiveMemoryWarning
