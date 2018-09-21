@@ -8,6 +8,7 @@
 
 #import "BMViewController.h"
 #import "UIColor+BMRandom.h"
+#import "BMCommonMacro.h"
 
 @interface BMViewController ()
 

@@ -1,9 +1,11 @@
 PODS:
-  - BMPrivatePods (0.1.1):
-    - BMPrivatePods/UIColor (= 0.1.1)
-    - BMPrivatePods/UIScreen (= 0.1.1)
-  - BMPrivatePods/UIColor (0.1.1)
-  - BMPrivatePods/UIScreen (0.1.1)
+  - BMPrivatePods (0.1.3):
+    - BMPrivatePods/BMMacro (= 0.1.3)
+    - BMPrivatePods/UIColor (= 0.1.3)
+    - BMPrivatePods/UIScreen (= 0.1.3)
+  - BMPrivatePods/BMMacro (0.1.3)
+  - BMPrivatePods/UIColor (0.1.3)
+  - BMPrivatePods/UIScreen (0.1.3)
   - Expecta (1.0.6)
   - "Expecta+Snapshots (3.1.1)":
     - Expecta (~> 1.0)
@@ -35,7 +37,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BMPrivatePods: 7714c3447345b673a05973d4e019944b506b3154
+  BMPrivatePods: fd71c51846f490fae1183565243254acd07ed36d
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   "Expecta+Snapshots": dcff217eef506dabd6dfdc7864ea2da321fafbb8
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a

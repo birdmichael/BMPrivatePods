@@ -14,6 +14,11 @@
 #import "UIColor+BMHEX.h"
 #import "UIColor+BMRandom.h"
 #import "UIColorHeader.h"
+#import "UIColor+BMGradient.h"
+#import "UIColor+BMHEX.h"
+#import "UIColor+BMHEX.h"
+#import "UIColor+BMRandom.h"
+#import "UIColorHeader.h"
 #import "UIScreen+BMFrame.h"
 
 FOUNDATION_EXPORT double BMPrivatePodsVersionNumber;
