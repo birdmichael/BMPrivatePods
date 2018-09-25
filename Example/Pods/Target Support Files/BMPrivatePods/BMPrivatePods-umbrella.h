@@ -14,6 +14,7 @@
 #import "BMMethodSwizzling.h"
 #import "NSArray+SafeNil.h"
 #import "NSDictionary+SafeNil.h"
+#import "NSMutableArray+SafeNil.h"
 #import "NSMutableDictionary+SafeNil.h"
 #import "UIColor+BMGradient.h"
 #import "UIColor+BMHEX.h"

@@ -8,8 +8,11 @@
 
 #import "BMViewController.h"
 #import "UIColor+BMRandom.h"
+#import "NSMutableArray+SafeNil.h"
 
-@interface BMViewController ()
+@interface BMViewController (){
+    NSMutableArray *_a;
+}
 
 @end
 
@@ -19,6 +22,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    _a = [NSMutableArray array];
+    [_a addObject:@"a"];
+    [_a addObject:nil];
     
 }
 

@@ -17,11 +17,11 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         BMExchangeClassMethods([self class], @selector(removeObject:), @selector(bm_removeObject:));
-        BMExchangeClassMethods(NSClassFromString(@"__NSArrayM"), @selector(addObject:), @selector(bm_addObject:));
-        BMExchangeClassMethods(NSClassFromString(@"__NSArrayM"), @selector(removeObjectAtIndex:), @selector(bm_removeObjectAtIndex:));
-        BMExchangeClassMethods(NSClassFromString(@"__NSArrayM"), @selector(insertObject:atIndex:), @selector(bm_insertObject:atIndex:));
-        BMExchangeClassMethods(NSClassFromString(@"__NSPlaceholderArray"), @selector(initWithObjects:count:), @selector(bm_initWithObjects:count:));
-        BMExchangeClassMethods(NSClassFromString(@"__NSArrayM"), @selector(objectAtIndex:), @selector(bm_objectAtIndex:));
+        BMExchangeInstanceMethods(NSClassFromString(@"__NSArrayM"), @selector(addObject:), @selector(bm_addObject:));
+        BMExchangeInstanceMethods(NSClassFromString(@"__NSArrayM"), @selector(removeObjectAtIndex:), @selector(bm_removeObjectAtIndex:));
+        BMExchangeInstanceMethods(NSClassFromString(@"__NSArrayM"), @selector(insertObject:atIndex:), @selector(bm_insertObject:atIndex:));
+        BMExchangeInstanceMethods(NSClassFromString(@"__NSPlaceholderArray"), @selector(initWithObjects:count:), @selector(bm_initWithObjects:count:));
+        BMExchangeInstanceMethods(NSClassFromString(@"__NSArrayM"), @selector(objectAtIndex:), @selector(bm_objectAtIndex:));
     });
 }
 

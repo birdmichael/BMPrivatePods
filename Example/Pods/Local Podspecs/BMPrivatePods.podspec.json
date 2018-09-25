@@ -1,6 +1,6 @@
 {
   "name": "BMPrivatePods",
-  "version": "0.1.5.2",
+  "version": "0.1.6.3",
   "summary": "BM Private Pods.",
   "description": "BirdMichal 日常所用到一些私有分类等 -- Private Pods",
   "homepage": "https://github.com/birdmichael/BMPrivatePods",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/birdmichael/BMPrivatePods.git",
-    "tag": "0.1.5.2"
+    "tag": "0.1.6.3"
   },
   "platforms": {
     "ios": "8.0"

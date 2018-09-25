@@ -16,8 +16,8 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        BMExchangeClassMethods(NSClassFromString(@"__NSArrayI"), @selector(objectAtIndex:), @selector(bm_objectAtIndexI:));
-        BMExchangeClassMethods(NSClassFromString(@"__NSArrayI"), @selector(arrayWithObjects:count:), @selector(bm_arrayWithObjects:count:));
+        BMExchangeInstanceMethods(NSClassFromString(@"__NSArrayI"), @selector(objectAtIndex:), @selector(bm_objectAtIndexI:));
+        BMExchangeInstanceMethods(NSClassFromString(@"__NSArrayI"), @selector(arrayWithObjects:count:), @selector(bm_arrayWithObjects:count:));
     });
 }
 
