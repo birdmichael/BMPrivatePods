@@ -33,7 +33,7 @@
         }
         if (objects[i] == nil) {
             hasNilObject = YES;
-            NSLog(@"%s object at index %lu is nil, it will be filtered", __FUNCTION__, i);
+            NSLog(@"%s object at index %lu is nil, it will be filtered", __FUNCTION__, (unsigned long)i);
             
 #if DEBUG
             
