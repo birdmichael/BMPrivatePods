@@ -66,7 +66,7 @@
         return;
     }
     
-    [self bm_safeRemoveObject:obj];
+    [self bm_removeObject:obj];
 }
 
 - (void)bm_addObject:(id)obj {
