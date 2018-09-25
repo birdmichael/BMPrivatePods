@@ -16,7 +16,7 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        BMExchangeClassMethods([self class], @selector(dictionaryWithObjects:forKeys:count:), @selector(st_dictionaryWithObjects:forKeys:count:));
+        BMExchangeClassMethods([self class], @selector(dictionaryWithObjects:forKeys:count:), @selector(bm_dictionaryWithObjects:forKeys:count:));
     });
 }
 

@@ -15,8 +15,8 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        BMExchangeInstanceMethods(NSClassFromString(@"__NSDictionaryM"), @selector(setObject:forKey:), @selector(st_setObject:forKey:));
-        BMExchangeInstanceMethods(NSClassFromString(@"__NSDictionaryM"), @selector(setObject:forKeyedSubscript:), @selector(st_setObject:forKeyedSubscript:));
+        BMExchangeInstanceMethods(NSClassFromString(@"__NSDictionaryM"), @selector(setObject:forKey:), @selector(bm_setObject:forKey:));
+        BMExchangeInstanceMethods(NSClassFromString(@"__NSDictionaryM"), @selector(setObject:forKeyedSubscript:), @selector(bm_setObject:forKeyedSubscript:));
     });
 }
 
