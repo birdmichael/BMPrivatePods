@@ -6,6 +6,7 @@
 //
 
 #import "NSMutableDictionary+SafeNil.h"
+#import "BMMethodSwizzling.h"
 
 #if DEBUG
 #else
