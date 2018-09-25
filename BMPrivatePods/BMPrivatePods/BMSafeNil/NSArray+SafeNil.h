@@ -9,13 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#if MOCHA_INNER
-#else
+//#if DEBUG
+//#else
 
 @interface NSArray (SafeNil)
 
 @end
 
-#endif
+//#endif
 
 NS_ASSUME_NONNULL_END

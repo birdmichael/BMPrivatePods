@@ -8,8 +8,8 @@
 #import "NSArray+SafeNil.h"
 #import "BMMethodSwizzling.h"
 
-#ifdef DEBUG
-#else
+//#ifdef DEBUG
+//#else
 
 @implementation NSArray (SafeNil)
 
@@ -61,4 +61,4 @@
 
 @end
 
-#endif
+//#endif
