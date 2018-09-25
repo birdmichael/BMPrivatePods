@@ -24,23 +24,6 @@
     return [[UIScreen mainScreen] bounds].size.height;
 }
 
-+ (CGSize)bm_orientationSize
-{
-    CGFloat systemVersion = [[[UIDevice currentDevice] systemVersion]
-                             doubleValue];
-    BOOL isLand =   UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation);
-    return (systemVersion>8.0 && isLand) ? SizeSWAP([UIScreen bm_size]) : [UIScreen bm_size];
-}
-
-+ (CGFloat)bm_orientationWidth
-{
-    return [UIScreen bm_orientationSize].width;
-}
-
-+ (CGFloat)bm_orientationHeight
-{
-    return [UIScreen bm_orientationSize].height;
-}
 
 + (CGSize)bm_DPISize
 {

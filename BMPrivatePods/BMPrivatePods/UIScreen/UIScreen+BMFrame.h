@@ -13,9 +13,6 @@
 + (CGFloat)bm_width;
 + (CGFloat)bm_height;
 
-+ (CGSize)bm_orientationSize;
-+ (CGFloat)bm_orientationWidth;
-+ (CGFloat)bm_orientationHeight;
 + (CGSize)bm_DPISize;
 
 @end

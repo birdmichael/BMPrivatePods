@@ -22,9 +22,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    _a = [NSMutableArray array];
-    [_a addObject:@"a"];
-    [_a addObject:nil];
     
 }
 
