@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01365638215A107D00B5F31E /* NSMutableArray+SafeNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 01365636215A107D00B5F31E /* NSMutableArray+SafeNil.h */; };
-		01365639215A107D00B5F31E /* NSMutableArray+SafeNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 01365636215A107D00B5F31E /* NSMutableArray+SafeNil.h */; };
-		0136563A215A107D00B5F31E /* NSMutableArray+SafeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 01365637215A107D00B5F31E /* NSMutableArray+SafeNil.m */; };
-		0136563B215A107D00B5F31E /* NSMutableArray+SafeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 01365637215A107D00B5F31E /* NSMutableArray+SafeNil.m */; };
+		0136563E215A1B2C00B5F31E /* NSMutableArray+SafeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0136563C215A1B2B00B5F31E /* NSMutableArray+SafeNil.m */; };
+		0136563F215A1B2C00B5F31E /* NSMutableArray+SafeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0136563C215A1B2B00B5F31E /* NSMutableArray+SafeNil.m */; };
+		01365640215A1B2C00B5F31E /* NSMutableArray+SafeNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 0136563D215A1B2B00B5F31E /* NSMutableArray+SafeNil.h */; };
+		01365641215A1B2C00B5F31E /* NSMutableArray+SafeNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 0136563D215A1B2B00B5F31E /* NSMutableArray+SafeNil.h */; };
 		01F278A54C85C2C865DDAD4090C559B6 /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E348D84229E9000F93233339AFC317B /* EXPDoubleTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03890D59600D45E6E9463700F9B11FFE /* XCTestCase+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = 7085F5CB16BF96F625D6465A4DA29F6F /* XCTestCase+Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0676595134A6036819E78D0404919486 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A7DDD4A7CE0636458E013320B3DCFC2 /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -246,8 +246,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01365636215A107D00B5F31E /* NSMutableArray+SafeNil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SafeNil.h"; sourceTree = "<group>"; };
-		01365637215A107D00B5F31E /* NSMutableArray+SafeNil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SafeNil.m"; sourceTree = "<group>"; };
+		0136563C215A1B2B00B5F31E /* NSMutableArray+SafeNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+SafeNil.m"; path = "BMPrivatePods/BMPrivatePods/BMSafeNil/NSMutableArray+SafeNil.m"; sourceTree = "<group>"; };
+		0136563D215A1B2B00B5F31E /* NSMutableArray+SafeNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+SafeNil.h"; path = "BMPrivatePods/BMPrivatePods/BMSafeNil/NSMutableArray+SafeNil.h"; sourceTree = "<group>"; };
 		0160D7EDEB19856BC505CA9E9075EC06 /* SPTGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTGlobalBeforeAfterEach.h; path = Specta/Specta/SPTGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
 		03E5B7234B07F25C9ABA9B88E97BB716 /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Specta.modulemap; sourceTree = "<group>"; };
 		064D45869BC2F37AD341CBDE9F822387 /* NSValue+Expecta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+Expecta.m"; path = "Expecta/NSValue+Expecta.m"; sourceTree = "<group>"; };
@@ -709,6 +709,8 @@
 		8B346D1F2F96E5AD03D7AE3AE9D112BC /* BMSafeNil */ = {
 			isa = PBXGroup;
 			children = (
+				0136563D215A1B2B00B5F31E /* NSMutableArray+SafeNil.h */,
+				0136563C215A1B2B00B5F31E /* NSMutableArray+SafeNil.m */,
 				CE4EC12463F5BACC6346C6FB831C6E4B /* BMMethodSwizzling.h */,
 				432009F8E07F499CB2CADFC888A10337 /* BMMethodSwizzling.m */,
 				51251E43972C3653DB2158C18A376DA1 /* NSArray+SafeNil.h */,
@@ -717,8 +719,6 @@
 				A45D3618C65343FD4A309FBA39B7B6E0 /* NSDictionary+SafeNil.m */,
 				CEF388FF0FACB2D5F4DE39253EB9187A /* NSMutableDictionary+SafeNil.h */,
 				2E93ABFFD006CA6650953707F3AE11AD /* NSMutableDictionary+SafeNil.m */,
-				01365636215A107D00B5F31E /* NSMutableArray+SafeNil.h */,
-				01365637215A107D00B5F31E /* NSMutableArray+SafeNil.m */,
 			);
 			name = BMSafeNil;
 			sourceTree = "<group>";
@@ -973,7 +973,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25C23D43E39C5DA9F2B204F080D852D5 /* Pods-BMPrivatePods_Example-umbrella.h in Headers */,
-				01365639215A107D00B5F31E /* NSMutableArray+SafeNil.h in Headers */,
+				01365641215A1B2C00B5F31E /* NSMutableArray+SafeNil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1066,13 +1066,13 @@
 				52EA548EC96CFCEA8BEE05BADC5E344B /* BMPrivatePods-umbrella.h in Headers */,
 				8BAB4F3A6D6B05289B9C9AB83901561C /* NSArray+SafeNil.h in Headers */,
 				521B12F853CFC0AD04C1AEC3DD94577E /* NSDictionary+SafeNil.h in Headers */,
-				01365638215A107D00B5F31E /* NSMutableArray+SafeNil.h in Headers */,
 				99FB70A7D4F86EDA3A598A462D086867 /* NSMutableDictionary+SafeNil.h in Headers */,
 				706D8137118EC0460516E2919EFBDA71 /* UIColor+BMGradient.h in Headers */,
 				FD96A30E1041E1C1AA59251862908495 /* UIColor+BMHEX.h in Headers */,
 				A78219EEB00EC580D0784903B5792272 /* UIColor+BMRandom.h in Headers */,
 				D3708E82F4761A7062E6EB27C2954B9E /* UIColorHeader.h in Headers */,
 				9BD2E0425FA6E2BF7CBA1F2BFFE827AF /* UIScreen+BMFrame.h in Headers */,
+				01365640215A1B2C00B5F31E /* NSMutableArray+SafeNil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1264,8 +1264,8 @@
 				353C806C1564746363A166E0B3EE2CCD /* BMPrivatePods-dummy.m in Sources */,
 				3C8A57A3536C6C8D728B9FEEDC2755C9 /* NSArray+SafeNil.m in Sources */,
 				E231A501E58934A4718036ED8781415B /* NSDictionary+SafeNil.m in Sources */,
-				0136563A215A107D00B5F31E /* NSMutableArray+SafeNil.m in Sources */,
 				91EAC9A1EDD26744321EDBAAA5D44FEF /* NSMutableDictionary+SafeNil.m in Sources */,
+				0136563E215A1B2C00B5F31E /* NSMutableArray+SafeNil.m in Sources */,
 				DED0E109EE2E43E9E723BE13F8F6FCED /* UIColor+BMGradient.m in Sources */,
 				ABE00D7747FF44409C95445D8EB833A8 /* UIColor+BMHEX.m in Sources */,
 				AB85178AC92A1BCDFE8989A113411BAD /* UIColor+BMRandom.m in Sources */,
@@ -1295,7 +1295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0136563B215A107D00B5F31E /* NSMutableArray+SafeNil.m in Sources */,
+				0136563F215A1B2C00B5F31E /* NSMutableArray+SafeNil.m in Sources */,
 				45AFCB64AE612D520A911D93065786DD /* Pods-BMPrivatePods_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
