@@ -8,7 +8,6 @@
 
 #import "BMViewController.h"
 #import "UIColor+BMRandom.h"
-#import "BMCommonMacro.h"
 
 @interface BMViewController ()
 
@@ -24,6 +23,10 @@
     [self.view addSubview:v];
     v.frame = CGRectMake(0, 0, 300, 300);
     v.backgroundColor = [UIColor bm_RandomColor];
+    BMLOG(@"hha");
+    BMPrint_Rect(v.frame);
+    NSArray *a = @[@(2),@(3)];
+    NSNumber *b = [a indexOfObject:5];;
     
 }
 

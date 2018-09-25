@@ -10,12 +10,8 @@
 #endif
 #endif
 
+#import "BMCommonMacro.h"
 #import "UIColor+BMGradient.h"
-#import "UIColor+BMHEX.h"
-#import "UIColor+BMRandom.h"
-#import "UIColorHeader.h"
-#import "UIColor+BMGradient.h"
-#import "UIColor+BMHEX.h"
 #import "UIColor+BMHEX.h"
 #import "UIColor+BMRandom.h"
 #import "UIColorHeader.h"
