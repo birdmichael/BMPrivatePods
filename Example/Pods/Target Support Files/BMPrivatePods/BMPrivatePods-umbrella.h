@@ -11,6 +11,10 @@
 #endif
 
 #import "BMCommonMacro.h"
+#import "BMMethodSwizzling.h"
+#import "NSArray+SafeNil.h"
+#import "NSDictionary+SafeNil.h"
+#import "NSMutableDictionary+SafeNil.h"
 #import "UIColor+BMGradient.h"
 #import "UIColor+BMHEX.h"
 #import "UIColor+BMRandom.h"

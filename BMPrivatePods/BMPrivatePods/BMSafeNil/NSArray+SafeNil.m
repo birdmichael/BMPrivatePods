@@ -8,28 +8,26 @@
 #import "NSArray+SafeNil.h"
 #import "BMMethodSwizzling.h"
 
-//#ifdef DEBUG
-//#else
+#ifdef DEBUG
+#else
 
 @implementation NSArray (SafeNil)
 
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        BMExchangeClassMethods([self class], @selector(objectAtIndex:), @selector(bm_objectAtIndexI:));
-        BMExchangeClassMethods([self class], @selector(arrayWithObjects:count:), @selector(bm_arrayWithObjects:count:));
+        BMExchangeClassMethods(NSClassFromString(@"__NSArrayI"), @selector(objectAtIndex:), @selector(bm_objectAtIndexI:));
+        BMExchangeClassMethods(NSClassFromString(@"__NSArrayI"), @selector(arrayWithObjects:count:), @selector(bm_arrayWithObjects:count:));
     });
 }
 
 - (id)bm_objectAtIndexI:(NSUInteger)index {
     if (index >= self.count) {
-    #if DEBUG
         NSLog(@"[%@ %@] index {%lu} beyond bounds [0...%lu]",
               NSStringFromClass([self class]),
               NSStringFromSelector(_cmd),
               (unsigned long)index,
               MAX((unsigned long)self.count - 1, 0));
-    #endif
         return nil;
     }
     
@@ -46,12 +44,10 @@
             count++;
         }
         else {
-    #if DEBUG
             NSLog(@"[%@ %@] NIL object at index {%lu}",
                   NSStringFromClass([self class]),
                   NSStringFromSelector(_cmd),
                   (unsigned long)i);
-    #endif
             
         }
     }
@@ -61,4 +57,4 @@
 
 @end
 
-//#endif
+#endif
