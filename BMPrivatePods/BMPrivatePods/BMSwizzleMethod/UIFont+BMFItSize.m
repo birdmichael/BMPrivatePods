@@ -43,7 +43,7 @@ static const CGFloat kFontSizeAugmenterWithIphonePlus = 1.5;
 
 + (UIFont *) bm_swizzleMethod_boldSystemFontOfSize:(CGFloat) fontSize {
     if([UIScreen mainScreen].bounds.size.width <= 320){
-        return [self YY_boldSystemFontOfSize:fontSize];
+        return [self bm_swizzleMethod_boldSystemFontOfSize:fontSize];
     }else if ([UIScreen mainScreen].bounds.size.width > 320 &&
               [UIScreen mainScreen].bounds.size.width <= 375){
         return [self bm_swizzleMethod_boldSystemFontOfSize:fontSize + kFontSizeAugmenterWithIphone6];
