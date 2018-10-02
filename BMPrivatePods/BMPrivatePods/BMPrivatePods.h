@@ -10,7 +10,6 @@
 
 #import "BMCommonMacro.h"
 #import "UIColorHeader.h"
-#import "UIScreenHeader.h"
 #import "BMCategoryExtension.h"
 
 

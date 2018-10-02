@@ -10,17 +10,25 @@
 #endif
 #endif
 
+#import "BMDataTypesFunctionC.h"
+#import "BMUIFunctionC.h"
 #import "BMCommonMacro.h"
 #import "BMMethodSwizzling.h"
 #import "NSArray+SafeNil.h"
 #import "NSDictionary+SafeNil.h"
 #import "NSMutableArray+SafeNil.h"
 #import "NSMutableDictionary+SafeNil.h"
+#import "BMSwizzleMethodDeploy.h"
+#import "UIFont+BMFItSize.h"
 #import "UIColor+BMGradient.h"
 #import "UIColor+BMHEX.h"
 #import "UIColor+BMRandom.h"
 #import "UIColorHeader.h"
-#import "UIScreen+BMFrame.h"
+#import "BMCategoryExtension.h"
+#import "NSString+BMExtension.h"
+#import "UIButton+BMExtension.h"
+#import "UILabel+BMExtension.h"
+#import "UIScreen+BMExtension.h"
 
 FOUNDATION_EXPORT double BMPrivatePodsVersionNumber;
 FOUNDATION_EXPORT const unsigned char BMPrivatePodsVersionString[];

@@ -5,7 +5,7 @@
 //  Created by BirdMichael on 2018/9/16.
 //
 
-#import "UIScreen+BMFrame.h"
+#import "UIScreen+BMExtension.h"
 
 @implementation UIScreen (BMExtension)
 

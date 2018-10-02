@@ -1,6 +1,6 @@
 {
   "name": "BMPrivatePods",
-  "version": "0.1.6.5",
+  "version": "0.1.6.7",
   "summary": "BM Private Pods.",
   "description": "BirdMichal 日常所用到一些私有分类等 -- Private Pods",
   "homepage": "https://github.com/birdmichael/BMPrivatePods",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/birdmichael/BMPrivatePods.git",
-    "tag": "0.1.6.5"
+    "tag": "0.1.6.7"
   },
   "platforms": {
     "ios": "8.0"
@@ -36,8 +36,21 @@
       "source_files": "BMPrivatePods/BMPrivatePods/BMSafeNil/**/*"
     },
     {
-      "name": "UIScreen",
-      "source_files": "BMPrivatePods/BMPrivatePods/UIScreen/**/*"
+      "name": "UIKit",
+      "source_files": "BMPrivatePods/BMPrivatePods/UIKit/**/*"
+    },
+    {
+      "name": "BMCFunctions",
+      "source_files": "BMPrivatePods/BMPrivatePods/BMCFunctions/**/*"
+    },
+    {
+      "name": "BMSwizzleMethod",
+      "dependencies": {
+        "BMPrivatePods/BMSafeNil": [
+
+        ]
+      },
+      "source_files": "BMPrivatePods/BMPrivatePods/BMSwizzleMethod/**/*"
     }
   ]
 }
