@@ -9,6 +9,8 @@
 #import "BMViewController.h"
 #import "UIColor+BMRandom.h"
 #import "NSMutableArray+SafeNil.h"
+#import "BMCommonMacro.h"
+
 
 @interface BMViewController (){
     NSMutableArray *_a;
@@ -20,6 +22,8 @@
 
 - (void)viewDidLoad
 {
+    
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     

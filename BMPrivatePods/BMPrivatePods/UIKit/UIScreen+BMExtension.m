@@ -1,5 +1,5 @@
 //
-//  UIScreen+BMFrame.m
+//  UIScreen+BMExtension.m
 //  BMPrivatePods
 //
 //  Created by BirdMichael on 2018/9/16.
@@ -7,7 +7,7 @@
 
 #import "UIScreen+BMFrame.h"
 
-@implementation UIScreen (BMFrame)
+@implementation UIScreen (BMExtension)
 
 + (CGSize)bm_size
 {
@@ -33,11 +33,5 @@
 }
 
 
-/**
- *  交换高度与宽度
- */
-static inline CGSize SizeSWAP(CGSize size) {
-    return CGSizeMake(size.height, size.width);
-}
 
 @end

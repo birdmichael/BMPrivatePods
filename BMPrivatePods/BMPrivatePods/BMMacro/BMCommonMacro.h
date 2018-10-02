@@ -29,15 +29,12 @@
 
 //Appdelegate
 #define kBMAppDelegate     (AppDelegate *)([UIApplication sharedApplication].delegate)
-
 #define kBMFileManager [NSFileManager defaultManager]
 #define kBMUserDefaults   [NSUserDefaults standardUserDefaults]
 #define kBMUserDefaultsGET(KEY)     [[NSUserDefaults standardUserDefaults]objectForKey:KEY]
 #define kBMUserDefaultsSET(VALUE,KEY)  [[NSUserDefaults standardUserDefaults] setObject:VALUE forKey:KEY]
 #define kBMUserDefaultsSYN [[NSUserDefaults standardUserDefaults] synchronize]
-
-#define BM_NOTIF_CENTER                      [NSNotificationCenter defaultCenter]
-
+#define BM_NOTIF_CENTER [NSNotificationCenter defaultCenter]
 #define kWindow         [[UIApplication sharedApplication] keyWindow]
 
 
@@ -54,12 +51,16 @@
 #define BM_MaxX(v)                 CGRectGetMaxX((v).frame)
 #define BM_MaxY(v)                 CGRectGetMaxY((v).frame)
 
+// 适配宽度，已经取整适配宽度
+#define BM_FitW(value)          ((value)/750.0f*[UIScreen mainScreen].bounds.size.width)
+#define BM_FitCeilW(value)      ceil(((value)/750.0f*[UIScreen mainScreen].bounds.size.width))
+
 // ios11 safeArea
 #define kBMStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 #define kBMNavBarHeight 44.0
 #define kBMTabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
-#define kLCPTopHeight (kLCPStatusBarHeight + kLCPNavBarHeight)
-#define kLCPSafeBottomHeight (iPhoneX_available ? 34 : 0)
+#define kBMTopHeight (kBMStatusBarHeight + kBMNavBarHeight)
+#define kMSafeBottomHeight (BM_IS_IPHONEX ? 34 : 0)
 
 // some_height
 #define kBMEnglishKeyboardHeight  (216.f)
@@ -135,6 +136,7 @@
 #define BM_SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #define BM_APP_VERSION  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #define BM_APP_DISPLAY_NAME  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]
+#define BM_APP_BUNDLE_ID  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"]
 
 #pragma mark ——— 数据 类型
 #define BM_Is_Empty_Sty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref)isEqualToString:@""]))
@@ -176,5 +178,30 @@
 #define BM_GO_TO_SYS_SETTING_PAGE [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
 // 图片延伸
 #define BM_IMAGE_STRETCH_IMG(image,w,h) [(image) stretchableImageWithLeftCapWidth:(image.size.width*(w)) topCapHeight:image.size.height*(h)]?:[UIImage new]
+#define BMImageName(name)          [UIImage imageNamed:(name)]
+
+// unaviable designed initializer
+// UIView
+#define BM_UNAVAILABLE_UIVIEW_INITIALIZER \
+- (instancetype)init NS_UNAVAILABLE; \
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE; \
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE; \
++ (instancetype)new NS_UNAVAILABLE;
+
+// UIViewController
+#define BM_UNAVAILABLE_UIVIEWCONTROLLER_INITIALIZER \
+- (instancetype)init NS_UNAVAILABLE; \
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE; \
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil NS_UNAVAILABLE; \
++ (instancetype)new NS_UNAVAILABLE;
+
+#if DEBUG
+#define BM_PARAMETER_EXCEPTION(condition, des) \
+if (!(condition)) { \
+[NSException raise:@"com.birdmichael.error" format:des]; \
+}
+#else
+#define BM_PARAMETER_EXCEPTION(condition, des)
+#endif
 
 #endif /* BMCommonMacro_h */
