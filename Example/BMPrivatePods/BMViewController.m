@@ -7,6 +7,7 @@
 //
 
 #import "BMViewController.h"
+#import "BMPrivate"
 
 
 @interface BMViewController (){

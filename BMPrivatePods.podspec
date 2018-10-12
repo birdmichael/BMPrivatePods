@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BMPrivatePods'
-  s.version          = '0.1.6.9'
+  s.version          = '0.1.6.10'
   s.summary          = 'BM Private Pods.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ BirdMichal 日常所用到一些私有分类等 -- Private Pods
 
   s.ios.deployment_target = '8.0'
 
-  # s.source_files = 'BMPrivatePods/BMPrivatePods/**/*'
+  s.source_files = 'BMPrivatePods/BMPrivatePods/**/*'
 
   s.subspec 'UIColor' do |uicolor|
       uicolor.source_files = 'BMPrivatePods/BMPrivatePods/UIColor/**/*'
