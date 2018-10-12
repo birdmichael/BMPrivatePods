@@ -20,6 +20,9 @@ typedef NS_ENUM(NSUInteger, BMImageTextAlignment) {
 
 @interface UIButton (BMExtension)
 
+/** 设置按钮额外点击区域 */
+@property (nonatomic, assign) UIEdgeInsets bm_touchAreaInsets;
+
 /**
  添加 addtarget
  */

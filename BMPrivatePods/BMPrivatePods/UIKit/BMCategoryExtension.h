@@ -12,5 +12,7 @@
 #import "UIButton+BMExtension.h"
 #import "NSString+BMExtension.h"
 #import "UILabel+BMExtension.h"
+#import "UIControl+BMExtension.h"
+#import "UIView+BMExtension.h"
 
 #endif /* BMCategoryExtension_h */

@@ -35,7 +35,7 @@
 #define kBMUserDefaultsSET(VALUE,KEY)  [[NSUserDefaults standardUserDefaults] setObject:VALUE forKey:KEY]
 #define kBMUserDefaultsSYN [[NSUserDefaults standardUserDefaults] synchronize]
 #define BM_NOTIF_CENTER [NSNotificationCenter defaultCenter]
-#define kWindow         [[UIApplication sharedApplication] keyWindow]
+#define kBMWindow         [[UIApplication sharedApplication] keyWindow]
 
 
 // View 坐标(x,y)和宽高(width,height)
@@ -142,10 +142,10 @@
 #define BM_Is_Empty_Sty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref)isEqualToString:@""]))
 #define BM_Is_Empty_Array(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref) count] == 0))
 #define BM_S_TO_URL(url) [NSURL URLWithString:url]
-#define string(str1,str2) [NSString stringWithFormat:@"%@%@",str1,str2]
-#define s_str(str1) [NSString stringWithFormat:@"%@",str1]
-#define s_Num(num1) [NSString stringWithFormat:@"%d",num1]
-#define s_Integer(num1) [NSString stringWithFormat:@"%ld",num1]
+#define BMString(str1,str2) [NSString stringWithFormat:@"%@%@",str1,str2]
+#define BMs_str(str1) [NSString stringWithFormat:@"%@",str1]
+#define BMs_Num(num1) [NSString stringWithFormat:@"%d",num1]
+#define BMs_Integer(num1) [NSString stringWithFormat:@"%ld",num1]
 
 #pragma mark ——— BMLOG
 /** 输出*/

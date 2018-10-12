@@ -23,6 +23,29 @@ static const void *UIButtonBlockKey = &UIButtonBlockKey;
     }
 }
 
+- (UIEdgeInsets)bm_touchAreaInsets
+{
+    return [objc_getAssociatedObject(self, @selector(bm_touchAreaInsets)) UIEdgeInsetsValue];
+}
+/**
+ *  @brief  设置按钮额外热区
+ */
+
+- (void)setBm_touchAreaInsets:(UIEdgeInsets)bm_touchAreaInsets {
+    NSValue *value = [NSValue valueWithUIEdgeInsets:bm_touchAreaInsets];
+    objc_setAssociatedObject(self, @selector(bm_touchAreaInsets), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    UIEdgeInsets touchAreaInsets = self.bm_touchAreaInsets;
+    CGRect bounds = self.bounds;
+    bounds = CGRectMake(bounds.origin.x - touchAreaInsets.left,
+                        bounds.origin.y - touchAreaInsets.top,
+                        bounds.size.width + touchAreaInsets.left + touchAreaInsets.right,
+                        bounds.size.height + touchAreaInsets.top + touchAreaInsets.bottom);
+    return CGRectContainsPoint(bounds, point);
+}
+
 - (void)bm_setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state {
     [self setBackgroundImage:[UIButton imageWithColor:backgroundColor] forState:state];
 }
