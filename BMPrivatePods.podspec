@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BMPrivatePods'
-  s.version          = '0.1.6.10'
+  s.version          = '0.1.6.11'
   s.summary          = 'BM Private Pods.'
 
 # This description is used to generate tags and improve search results.

@@ -7,7 +7,7 @@
 //
 
 #import "BMViewController.h"
-#import "BMPrivate"
+#import "BMPrivatePodsHeader.h"
 
 
 @interface BMViewController (){
@@ -20,8 +20,14 @@
 
 - (void)viewDidLoad
 {
+ 
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 100, 100, 100);
+    btn.backgroundColor = [UIColor redColor];
+    btn.bm_badgeValue = @"1";
+    [self.view addSubview:btn];
     
-    
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     

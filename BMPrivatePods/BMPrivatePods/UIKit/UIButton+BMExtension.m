@@ -170,6 +170,259 @@ static const void *UIButtonBlockKey = &UIButtonBlockKey;
     return CGSizeMake(ceil(insets.left + insets.right + sumWidth), ceil(insets.top + insets.bottom + sumHeight));
 }
 
+#pragma mark ——— UIButton Badge(Category)
+NSString const *bm_UIButton_badgeKey = @"bm_UIButton_badgeKey";
+
+NSString const *bm_UIButton_badgeBGColorKey = @"bm_UIButton_badgeBGColorKey";
+NSString const *bm_UIButton_badgeTextColorKey = @"bm_UIButton_badgeTextColorKey";
+NSString const *bm_UIButton_badgeFontKey = @"bm_UIButton_badgeFontKey";
+NSString const *bm_UIButton_badgePaddingKey = @"bm_UIButton_badgePaddingKey";
+NSString const *bm_UIButton_badgeMinSizeKey = @"bm_UIButton_badgeMinSizeKey";
+NSString const *bm_UIButton_badgeOriginXKey = @"bm_UIButton_badgeOriginXKey";
+NSString const *bm_UIButton_badgeOriginYKey = @"bm_UIButton_badgeOriginYKey";
+NSString const *bm_UIButton_shouldHideBadgeAtZeroKey = @"bm_UIButton_shouldHideBadgeAtZeroKey";
+NSString const *bm_UIButton_shouldAnimateBadgeKey = @"bm_UIButton_shouldAnimateBadgeKey";
+NSString const *bm_UIButton_badgeValueKey = @"bm_UIButton_badgeValueKey";
+
+
+@dynamic bm_badgeValue, bm_badgeBGColor, bm_badgeTextColor, bm_badgeFont;
+@dynamic bm_badgePadding, bm_badgeMinSize, bm_badgeOriginX, bm_badgeOriginY;
+@dynamic bm_shouldHideBadgeAtZero, bm_shouldAnimateBadge;
+
+- (void)bm_badgeInit
+{
+    // 初始化默认值
+    self.bm_badgeBGColor   = [UIColor redColor];
+    self.bm_badgeTextColor = [UIColor whiteColor];
+    self.bm_badgeFont      = [UIFont systemFontOfSize:12.0];
+    self.bm_badgePadding   = 6;
+    self.bm_badgeMinSize   = 8;
+    self.bm_badgeOriginX   = self.frame.size.width - self.bm_badge.frame.size.width/2;
+    self.bm_badgeOriginY   = -4;
+    self.bm_shouldHideBadgeAtZero = YES;
+    self.bm_shouldAnimateBadge = YES;
+    self.clipsToBounds = NO;
+}
+
+#pragma mark - Badge Utility methods
+
+// 当字体颜色，背景色，字体等更改时需要刷新视图
+- (void)bm_refreshBadge {
+    // Change new attributes
+    self.bm_badge.textColor        = self.bm_badgeTextColor;
+    self.bm_badge.backgroundColor  = self.bm_badgeBGColor;
+    self.bm_badge.font             = self.bm_badgeFont;
+}
+
+- (CGSize) bm_badgeExpectedSize {
+    UILabel *frameLabel = [self bm_duplicateLabel:self.bm_badge];
+    [frameLabel sizeToFit];
+    
+    CGSize expectedLabelSize = frameLabel.frame.size;
+    return expectedLabelSize;
+}
+
+- (void)bm_updateBadgeFrame {
+    
+    CGSize expectedLabelSize = [self bm_badgeExpectedSize];
+    
+    // Make sure that for small value, the badge will be big enough
+    CGFloat minHeight = expectedLabelSize.height;
+    
+    // Using a const we make sure the badge respect the minimum size
+    minHeight = (minHeight < self.bm_badgeMinSize) ? self.bm_badgeMinSize : expectedLabelSize.height;
+    CGFloat minWidth = expectedLabelSize.width;
+    CGFloat padding = self.bm_badgePadding;
+    
+    // Using const we make sure the badge doesn't get too smal
+    minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width;
+    self.bm_badge.frame = CGRectMake(self.bm_badgeOriginX, self.bm_badgeOriginY, minWidth + padding, minHeight + padding);
+    self.bm_badge.layer.cornerRadius = (minHeight + padding) / 2;
+    self.bm_badge.layer.masksToBounds = YES;
+}
+
+// Handle the badge changing value
+- (void)bm_updateBadgeValueAnimated:(BOOL)animated {
+    // Bounce animation on badge if value changed and if animation authorized
+    if (animated && self.bm_shouldAnimateBadge && ![self.bm_badge.text isEqualToString:self.bm_badgeValue]) {
+        CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        [animation setFromValue:[NSNumber numberWithFloat:1.5]];
+        [animation setToValue:[NSNumber numberWithFloat:1]];
+        [animation setDuration:0.2];
+        [animation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.4f :1.3f :1.f :1.f]];
+        [self.bm_badge.layer addAnimation:animation forKey:@"bounceAnimation"];
+    }
+    
+    // Set the new value
+    self.bm_badge.text = self.bm_badgeValue;
+    
+    // Animate the size modification if needed
+    NSTimeInterval duration = animated ? 0.2 : 0;
+    [UIView animateWithDuration:duration animations:^{
+        [self bm_updateBadgeFrame];
+    }];
+}
+
+- (UILabel *)bm_duplicateLabel:(UILabel *)labelToCopy {
+    UILabel *duplicateLabel = [[UILabel alloc] initWithFrame:labelToCopy.frame];
+    duplicateLabel.text = labelToCopy.text;
+    duplicateLabel.font = labelToCopy.font;
+    
+    return duplicateLabel;
+}
+
+- (void)bm_removeBadge {
+
+    [UIView animateWithDuration:0.2 animations:^{
+        self.bm_badge.transform = CGAffineTransformMakeScale(0, 0);
+    } completion:^(BOOL finished) {
+        [self.bm_badge removeFromSuperview];
+        self.bm_badge = nil;
+    }];
+}
+
+#pragma mark - Badge getters/setters
+-(UILabel*)bm_badge {
+    return objc_getAssociatedObject(self, &bm_UIButton_badgeKey);
+}
+-(void)setBm_badge:(UILabel *)badgeLabel
+{
+    objc_setAssociatedObject(self, &bm_UIButton_badgeKey, badgeLabel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
+- (NSString *)bm_badgeValue {
+    return objc_getAssociatedObject(self, &bm_UIButton_badgeValueKey);
+}
+- (void)setBm_badgeValue:(NSString *)badgeValue
+{
+    objc_setAssociatedObject(self, &bm_UIButton_badgeValueKey, badgeValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    // 当字符串为空或者数字为0时候隐藏Badge
+    if (!badgeValue || [badgeValue isEqualToString:@""] || ([badgeValue isEqualToString:@"0"] && self.bm_shouldHideBadgeAtZero)) {
+        [self bm_removeBadge];
+    } else if (!self.bm_badge) {
+        // Create a new badge because not existing
+        self.bm_badge                      = [[UILabel alloc] initWithFrame:CGRectMake(self.bm_badgeOriginX, self.bm_badgeOriginY, 20, 20)];
+        self.bm_badge.textColor            = self.bm_badgeTextColor;
+        self.bm_badge.backgroundColor      = self.bm_badgeBGColor;
+        self.bm_badge.font                 = self.bm_badgeFont;
+        self.bm_badge.textAlignment        = NSTextAlignmentCenter;
+        [self bm_badgeInit];
+        [self addSubview:self.bm_badge];
+        [self bm_updateBadgeValueAnimated:NO];
+    } else {
+        [self bm_updateBadgeValueAnimated:YES];
+    }
+}
+
+
+- (UIColor *)bm_badgeBGColor {
+    return objc_getAssociatedObject(self, &bm_UIButton_badgeBGColorKey);
+}
+- (void)setBm_badgeBGColor:(UIColor *)badgeBGColor
+{
+    objc_setAssociatedObject(self, &bm_UIButton_badgeBGColorKey, badgeBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.bm_badge) {
+        [self bm_refreshBadge];
+    }
+}
+
+- (UIColor *)bm_badgeTextColor {
+    return objc_getAssociatedObject(self, &bm_UIButton_badgeTextColorKey);
+}
+- (void)setBm_badgeTextColor:(UIColor *)badgeTextColor
+{
+    objc_setAssociatedObject(self, &bm_UIButton_badgeTextColorKey, badgeTextColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.bm_badge) {
+        [self bm_refreshBadge];
+    }
+}
+
+- (UIFont *)bm_badgeFont {
+    return objc_getAssociatedObject(self, &bm_UIButton_badgeFontKey);
+}
+- (void)setBm_badgeFont:(UIFont *)badgeFont
+{
+    objc_setAssociatedObject(self, &bm_UIButton_badgeFontKey, badgeFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.bm_badge) {
+        [self bm_refreshBadge];
+    }
+}
+
+
+- (CGFloat) bm_badgePadding {
+    NSNumber *number = objc_getAssociatedObject(self, &bm_UIButton_badgePaddingKey);
+    return number.floatValue;
+}
+- (void) setBm_badgePadding:(CGFloat)badgePadding
+{
+    NSNumber *number = [NSNumber numberWithDouble:badgePadding];
+    objc_setAssociatedObject(self, &bm_UIButton_badgePaddingKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.bm_badge) {
+        [self bm_updateBadgeFrame];
+    }
+}
+
+- (CGFloat) bm_badgeMinSize {
+    NSNumber *number = objc_getAssociatedObject(self, &bm_UIButton_badgeMinSizeKey);
+    return number.floatValue;
+}
+- (void) setBm_badgeMinSize:(CGFloat)badgeMinSize
+{
+    NSNumber *number = [NSNumber numberWithDouble:badgeMinSize];
+    objc_setAssociatedObject(self, &bm_UIButton_badgeMinSizeKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.bm_badge) {
+        [self bm_updateBadgeFrame];
+    }
+}
+
+- (CGFloat) bm_badgeOriginX {
+    NSNumber *number = objc_getAssociatedObject(self, &bm_UIButton_badgeOriginXKey);
+    return number.floatValue;
+}
+- (void) setBm_badgeOriginX:(CGFloat)badgeOriginX
+{
+    NSNumber *number = [NSNumber numberWithDouble:badgeOriginX];
+    objc_setAssociatedObject(self, &bm_UIButton_badgeOriginXKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.bm_badge) {
+        [self bm_updateBadgeFrame];
+    }
+}
+
+- (CGFloat) bm_badgeOriginY {
+    NSNumber *number = objc_getAssociatedObject(self, &bm_UIButton_badgeOriginYKey);
+    return number.floatValue;
+}
+- (void) setBm_badgeOriginY:(CGFloat)badgeOriginY
+{
+    NSNumber *number = [NSNumber numberWithDouble:badgeOriginY];
+    objc_setAssociatedObject(self, &bm_UIButton_badgeOriginYKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.bm_badge) {
+        [self bm_updateBadgeFrame];
+    }
+}
+
+- (BOOL) bm_shouldHideBadgeAtZero {
+    NSNumber *number = objc_getAssociatedObject(self, &bm_UIButton_shouldHideBadgeAtZeroKey);
+    return number.boolValue;
+}
+- (void)setBm_shouldHideBadgeAtZero:(BOOL)shouldHideBadgeAtZero
+{
+    NSNumber *number = [NSNumber numberWithBool:shouldHideBadgeAtZero];
+    objc_setAssociatedObject(self, &bm_UIButton_shouldHideBadgeAtZeroKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL) bm_shouldAnimateBadge {
+    NSNumber *number = objc_getAssociatedObject(self, &bm_UIButton_shouldAnimateBadgeKey);
+    return number.boolValue;
+}
+- (void)setBm_shouldAnimateBadge:(BOOL)shouldAnimateBadge
+{
+    NSNumber *number = [NSNumber numberWithBool:shouldAnimateBadge];
+    objc_setAssociatedObject(self, &bm_UIButton_shouldAnimateBadgeKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 @end
 
 
@@ -200,7 +453,7 @@ static const void *UIButtonBlockKey = &UIButtonBlockKey;
     _bm_cornerRaduous = _bm_cornerRaduous ?: 5.0;
     
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
-                                                   byRoundingCorners:self.corners
+                                                   byRoundingCorners:self.bm_corners
                                                          cornerRadii:CGSizeMake(_bm_cornerRaduous, _bm_cornerRaduous)];
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame         = self.bounds;

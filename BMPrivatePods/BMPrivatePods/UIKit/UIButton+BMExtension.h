@@ -74,19 +74,49 @@ typedef NS_ENUM(NSUInteger, BMImageTextAlignment) {
  */
 - (CGSize)st_sizeWithContentInsets:(UIEdgeInsets)insets alignment:(BMImageTextAlignment)alignment padding:(CGFloat)padding;
 
+
+#pragma mark ——— UIButton Badge(Category)
+/** Badge badge显示的容器Label */
+@property (nonatomic, strong, nullable) UILabel *bm_badge;
+
+/** Badge显示内容(Str) */
+@property (nonatomic, copy) NSString *bm_badgeValue;
+/** Badge 背景色 默认:redColor */
+@property (nonatomic, strong) UIColor *bm_badgeBGColor;
+/** Badge 文字颜色 默认:whiteColor */
+@property (nonatomic, strong) UIColor *bm_badgeTextColor;
+/** Badge 文字字体 默认:12号系统字体*/
+@property (nonatomic, strong) UIFont *bm_badgeFont;
+/** Badge Padding 默认:6 */
+@property (nonatomic, assign) CGFloat bm_badgePadding;
+/** Badge 最小尺寸 默认:8 */
+@property (nonatomic, assign) CGFloat bm_badgeMinSize;
+/** Badge Padding X默认 Y默认:-4*/
+@property (nonatomic, assign) CGFloat bm_badgeOriginX;
+@property (nonatomic, assign) CGFloat bm_badgeOriginY;
+/** 当Badge为数组时，0是否隐藏Badge */
+@property BOOL bm_shouldHideBadgeAtZero;
+// Badge has a bounce animation when value changes
+/** 需要需要当值改变时Badge有一个bounce的动画 */
+@property BOOL bm_shouldAnimateBadge;
+
 @end
+
 
 NS_ASSUME_NONNULL_END
 
-
 #pragma mark ——— BMRoundedButton
-
 #import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 IB_DESIGNABLE
 @interface BMRoundedButton : UIButton
 
-@property (nonatomic, assign) IBInspectable UIRectCorner corners;
+@property (nonatomic, assign) IBInspectable UIRectCorner bm_corners;
 @property (nonatomic, assign) IBInspectable CGFloat bm_cornerRaduous;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
