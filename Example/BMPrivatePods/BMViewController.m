@@ -23,9 +23,10 @@
 {
  
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(100, 100, 100, 100);
+    btn.frame = CGRectMake(0, 100, 30 , 30);
     btn.backgroundColor = [UIColor redColor];
-    btn.bm_badgeValue = @"1";;
+    btn.bm_badgeValue = @"12";
+    btn.bm_badgePadding= 0;
     [self.view addSubview:btn];
     
 

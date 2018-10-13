@@ -23,6 +23,8 @@ static const void *UIButtonBlockKey = &UIButtonBlockKey;
     }
 }
 
+
+
 - (UIEdgeInsets)bm_touchAreaInsets
 {
     return [objc_getAssociatedObject(self, @selector(bm_touchAreaInsets)) UIEdgeInsetsValue];
@@ -197,7 +199,7 @@ NSString const *bm_UIButton_badgeValueKey = @"bm_UIButton_badgeValueKey";
     self.bm_badgeFont      = [UIFont systemFontOfSize:12.0];
     self.bm_badgePadding   = 6;
     self.bm_badgeMinSize   = 8;
-    self.bm_badgeOriginX   = self.frame.size.width - self.bm_badge.frame.size.width/2;
+    self.bm_badgeOriginX   = self.frame.size.width - ((self.bm_badge.frame.size.width - self.bm_badgePadding)/2);
     self.bm_badgeOriginY   = -4;
     self.bm_shouldHideBadgeAtZero = YES;
     self.bm_shouldAnimateBadge = YES;
@@ -235,7 +237,7 @@ NSString const *bm_UIButton_badgeValueKey = @"bm_UIButton_badgeValueKey";
     CGFloat padding = self.bm_badgePadding;
     
     // Using const we make sure the badge doesn't get too smal
-    minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width;
+    minWidth = (minWidth < minHeight) ? ceilf(minHeight) : ceilf(expectedLabelSize.width);
     self.bm_badge.frame = CGRectMake(self.bm_badgeOriginX, self.bm_badgeOriginY, minWidth + padding, minHeight + padding);
     self.bm_badge.layer.cornerRadius = (minHeight + padding) / 2;
     self.bm_badge.layer.masksToBounds = YES;

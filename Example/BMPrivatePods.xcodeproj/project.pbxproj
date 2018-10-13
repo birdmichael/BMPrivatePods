@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		019E26A82172311400F42A3A /* BMPrivatePodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 019E26A72172311400F42A3A /* BMPrivatePodsTests.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -27,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		019E26A42172311400F42A3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteInfo = BMPrivatePods_Example;
+		};
 		6003F5B3195388D20070C39A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6003F582195388D10070C39A /* Project object */;
@@ -36,7 +44,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		019E26B42172311400F42A3A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		019E269A2172311400F42A3A /* BMPrivatePods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMPrivatePods.h; sourceTree = "<group>"; };
+		019E269B2172311400F42A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		019E26A02172311400F42A3A /* BMPrivatePodsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMPrivatePodsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		019E26A72172311400F42A3A /* BMPrivatePodsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMPrivatePodsTests.m; sourceTree = "<group>"; };
+		019E26A92172311400F42A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CE8A9B4E19E01E3736B6022 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		341C1DB8CF51519BB348D6FC /* Pods_BMPrivatePods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMPrivatePods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D598445F0D60E96C2345CE /* Pods-BMPrivatePods_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMPrivatePods_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMPrivatePods_Example/Pods-BMPrivatePods_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +96,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		019E269D2172311400F42A3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F587195388D20070C39A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,12 +128,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		019E26992172311400F42A3A /* BMPrivatePods */ = {
+			isa = PBXGroup;
+			children = (
+				019E269A2172311400F42A3A /* BMPrivatePods.h */,
+				019E269B2172311400F42A3A /* Info.plist */,
+			);
+			path = BMPrivatePods;
+			sourceTree = "<group>";
+		};
+		019E26A62172311400F42A3A /* BMPrivatePodsTests */ = {
+			isa = PBXGroup;
+			children = (
+				019E26A72172311400F42A3A /* BMPrivatePodsTests.m */,
+				019E26A92172311400F42A3A /* Info.plist */,
+			);
+			path = BMPrivatePodsTests;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for BMPrivatePods */,
 				6003F5B5195388D20070C39A /* Tests */,
+				019E26992172311400F42A3A /* BMPrivatePods */,
+				019E26A62172311400F42A3A /* BMPrivatePodsTests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				D59E0D58F1EB747122256678 /* Pods */,
@@ -112,6 +165,7 @@
 			children = (
 				6003F58A195388D20070C39A /* BMPrivatePods_Example.app */,
 				6003F5AE195388D20070C39A /* BMPrivatePods_Tests.xctest */,
+				019E26A02172311400F42A3A /* BMPrivatePodsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,6 +253,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		019E269F2172311400F42A3A /* BMPrivatePodsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 019E26B52172311400F42A3A /* Build configuration list for PBXNativeTarget "BMPrivatePodsTests" */;
+			buildPhases = (
+				019E269C2172311400F42A3A /* Sources */,
+				019E269D2172311400F42A3A /* Frameworks */,
+				019E269E2172311400F42A3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				019E26A52172311400F42A3A /* PBXTargetDependency */,
+			);
+			name = BMPrivatePodsTests;
+			productName = BMPrivatePodsTests;
+			productReference = 019E26A02172311400F42A3A /* BMPrivatePodsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6003F589195388D20070C39A /* BMPrivatePods_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "BMPrivatePods_Example" */;
@@ -208,6 +280,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				90C11F8C311A72C522D1B9F5 /* [CP] Embed Pods Frameworks */,
+				019E26B42172311400F42A3A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -248,6 +321,11 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = birdmichael;
 				TargetAttributes = {
+					019E269F2172311400F42A3A = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6003F589195388D20070C39A;
+					};
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = AQ85KA384Z;
 					};
@@ -271,11 +349,19 @@
 			targets = (
 				6003F589195388D20070C39A /* BMPrivatePods_Example */,
 				6003F5AD195388D20070C39A /* BMPrivatePods_Tests */,
+				019E269F2172311400F42A3A /* BMPrivatePodsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		019E269E2172311400F42A3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F588195388D20070C39A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,6 +465,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		019E269C2172311400F42A3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				019E26A82172311400F42A3A /* BMPrivatePodsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F586195388D20070C39A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -400,6 +494,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		019E26A52172311400F42A3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6003F589195388D20070C39A /* BMPrivatePods_Example */;
+			targetProxy = 019E26A42172311400F42A3A /* PBXContainerItemProxy */;
+		};
 		6003F5B4195388D20070C39A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6003F589195388D20070C39A /* BMPrivatePods_Example */;
@@ -435,6 +534,57 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		019E26B12172311400F42A3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BMPrivatePodsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = BirdMichael.BMPrivatePodsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BMPrivatePods_Example.app/BMPrivatePods_Example";
+			};
+			name = Debug;
+		};
+		019E26B22172311400F42A3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BMPrivatePodsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = BirdMichael.BMPrivatePodsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BMPrivatePods_Example.app/BMPrivatePods_Example";
+			};
+			name = Release;
+		};
 		6003F5BD195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -539,10 +689,12 @@
 			baseConfigurationReference = 66159F3AD5883F74464FF661 /* Pods-BMPrivatePods_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = AQ85KA384Z;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BMPrivatePods/BMPrivatePods-Prefix.pch";
 				INFOPLIST_FILE = "BMPrivatePods/BMPrivatePods-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.BMPrivatePods-Exampless";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -555,10 +707,12 @@
 			baseConfigurationReference = 52D598445F0D60E96C2345CE /* Pods-BMPrivatePods_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = AQ85KA384Z;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BMPrivatePods/BMPrivatePods-Prefix.pch";
 				INFOPLIST_FILE = "BMPrivatePods/BMPrivatePods-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.BMPrivatePods-Exampless";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -615,6 +769,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		019E26B52172311400F42A3A /* Build configuration list for PBXNativeTarget "BMPrivatePodsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				019E26B12172311400F42A3A /* Debug */,
+				019E26B22172311400F42A3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6003F585195388D10070C39A /* Build configuration list for PBXProject "BMPrivatePods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
