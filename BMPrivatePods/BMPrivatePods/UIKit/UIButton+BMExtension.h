@@ -94,10 +94,9 @@ typedef NS_ENUM(NSUInteger, BMImageTextAlignment) {
 /** Badge Padding X默认 Y默认:-4*/
 @property (nonatomic, assign) CGFloat bm_badgeOriginX;
 @property (nonatomic, assign) CGFloat bm_badgeOriginY;
-/** 当Badge为数组时，0是否隐藏Badge */
+/** 当Badge为数组时，0是否隐藏Badge  默认值：YES*/
 @property BOOL bm_shouldHideBadgeAtZero;
-// Badge has a bounce animation when value changes
-/** 需要需要当值改变时Badge有一个bounce的动画 */
+/** 需要需要当值改变时Badge有一个bounce的动画 默认值：YES*/
 @property BOOL bm_shouldAnimateBadge;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "BMViewController.h"
 #import "BMPrivatePodsHeader.h"
+#import "UIButton+BMExtension.h"
 
 
 @interface BMViewController (){
@@ -24,7 +25,7 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(100, 100, 100, 100);
     btn.backgroundColor = [UIColor redColor];
-    btn.bm_badgeValue = @"1";
+    btn.bm_badgeValue = @"1";;
     [self.view addSubview:btn];
     
 

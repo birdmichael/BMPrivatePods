@@ -185,9 +185,9 @@ NSString const *bm_UIButton_shouldAnimateBadgeKey = @"bm_UIButton_shouldAnimateB
 NSString const *bm_UIButton_badgeValueKey = @"bm_UIButton_badgeValueKey";
 
 
-@dynamic bm_badgeValue, bm_badgeBGColor, bm_badgeTextColor, bm_badgeFont;
-@dynamic bm_badgePadding, bm_badgeMinSize, bm_badgeOriginX, bm_badgeOriginY;
-@dynamic bm_shouldHideBadgeAtZero, bm_shouldAnimateBadge;
+//@dynamic bm_badgeValue, bm_badgeBGColor, bm_badgeTextColor, bm_badgeFont;
+//@dynamic bm_badgePadding, bm_badgeMinSize, bm_badgeOriginX, bm_badgeOriginY;
+//@dynamic bm_shouldHideBadgeAtZero, bm_shouldAnimateBadge;
 
 - (void)bm_badgeInit
 {
@@ -285,21 +285,20 @@ NSString const *bm_UIButton_badgeValueKey = @"bm_UIButton_badgeValueKey";
 -(UILabel*)bm_badge {
     return objc_getAssociatedObject(self, &bm_UIButton_badgeKey);
 }
--(void)setBm_badge:(UILabel *)badgeLabel
-{
-    objc_setAssociatedObject(self, &bm_UIButton_badgeKey, badgeLabel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setBm_badge:(UILabel *)bm_badge{
+    objc_setAssociatedObject(self, &bm_UIButton_badgeKey, bm_badge, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 
 - (NSString *)bm_badgeValue {
     return objc_getAssociatedObject(self, &bm_UIButton_badgeValueKey);
 }
-- (void)setBm_badgeValue:(NSString *)badgeValue
-{
-    objc_setAssociatedObject(self, &bm_UIButton_badgeValueKey, badgeValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+- (void)setBm_badgeValue:(NSString *)bm_badgeValue{
+    objc_setAssociatedObject(self, &bm_UIButton_badgeValueKey, bm_badgeValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     // 当字符串为空或者数字为0时候隐藏Badge
-    if (!badgeValue || [badgeValue isEqualToString:@""] || ([badgeValue isEqualToString:@"0"] && self.bm_shouldHideBadgeAtZero)) {
+    if (!bm_badgeValue || [bm_badgeValue isEqualToString:@""] || ([bm_badgeValue isEqualToString:@"0"] && self.bm_shouldHideBadgeAtZero)) {
         [self bm_removeBadge];
     } else if (!self.bm_badge) {
         // Create a new badge because not existing
