@@ -14,5 +14,6 @@
 #import "UILabel+BMExtension.h"
 #import "UIControl+BMExtension.h"
 #import "UIView+BMExtension.h"
+#import "UIImage+Extension.h"
 
 #endif /* BMCategoryExtension_h */
