@@ -1,18 +1,19 @@
 PODS:
-  - BMPrivatePods (0.1.6.12.2):
-    - BMPrivatePods/BMCFunctions (= 0.1.6.12.2)
-    - BMPrivatePods/BMMacro (= 0.1.6.12.2)
-    - BMPrivatePods/BMSafeNil (= 0.1.6.12.2)
-    - BMPrivatePods/BMSwizzleMethod (= 0.1.6.12.2)
-    - BMPrivatePods/UIColor (= 0.1.6.12.2)
-    - BMPrivatePods/UIKit (= 0.1.6.12.2)
-  - BMPrivatePods/BMCFunctions (0.1.6.12.2)
-  - BMPrivatePods/BMMacro (0.1.6.12.2)
-  - BMPrivatePods/BMSafeNil (0.1.6.12.2)
-  - BMPrivatePods/BMSwizzleMethod (0.1.6.12.2):
+  - BMPrivatePods (0.1.6.12.8):
+    - BMPrivatePods/BMCFunctions (= 0.1.6.12.8)
+    - BMPrivatePods/BMMacro (= 0.1.6.12.8)
+    - BMPrivatePods/BMSafeNil (= 0.1.6.12.8)
+    - BMPrivatePods/BMSwizzleMethod (= 0.1.6.12.8)
+    - BMPrivatePods/UIColor (= 0.1.6.12.8)
+    - BMPrivatePods/UIKit (= 0.1.6.12.8)
+  - BMPrivatePods/BMCFunctions (0.1.6.12.8)
+  - BMPrivatePods/BMMacro (0.1.6.12.8)
+  - BMPrivatePods/BMSafeNil (0.1.6.12.8)
+  - BMPrivatePods/BMSwizzleMethod (0.1.6.12.8):
     - BMPrivatePods/BMSafeNil
-  - BMPrivatePods/UIColor (0.1.6.12.2)
-  - BMPrivatePods/UIKit (0.1.6.12.2)
+  - BMPrivatePods/UIColor (0.1.6.12.8)
+  - BMPrivatePods/UIKit (0.1.6.12.8):
+    - BMPrivatePods/UIColor
   - Expecta (1.0.6)
   - "Expecta+Snapshots (3.1.1)":
     - Expecta (~> 1.0)
@@ -44,7 +45,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BMPrivatePods: 519dad7a065616c4c99758fb849ab6d1dce624b0
+  BMPrivatePods: 327633cf6474d6d34bc57d86876dfffad9084eea
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   "Expecta+Snapshots": dcff217eef506dabd6dfdc7864ea2da321fafbb8
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a

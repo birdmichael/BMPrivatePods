@@ -91,7 +91,7 @@ typedef NS_ENUM(NSUInteger, BMImageTextAlignment) {
 @property (nonatomic, assign) CGFloat bm_badgePadding;
 /** Badge 最小尺寸 默认:8 */
 @property (nonatomic, assign) CGFloat bm_badgeMinSize;
-/** Badge Padding X默认 Y默认:-4*/
+/** Badge Padding X默认:jz取整居中Btnd宽 Y默认:-4（已适配Padding）*/
 @property (nonatomic, assign) CGFloat bm_badgeOriginX;
 @property (nonatomic, assign) CGFloat bm_badgeOriginY;
 /** 当Badge为数组时，0是否隐藏Badge  默认值：YES*/

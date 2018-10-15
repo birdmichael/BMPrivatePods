@@ -18,7 +18,7 @@ NSString * BMString(id avg1, ...) {
     return [formatter copy];
 }
 
-NSString * BMFormat(NSString *format, ...) {
+NSString * BMStrFormat(NSString *format, ...) {
     va_list list;
     va_start(list, format);
     NSString *string = [[NSString alloc] initWithFormat:format arguments:list];

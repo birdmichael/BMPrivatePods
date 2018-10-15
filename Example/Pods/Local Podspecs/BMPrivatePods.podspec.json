@@ -1,6 +1,6 @@
 {
   "name": "BMPrivatePods",
-  "version": "0.1.6.12.2",
+  "version": "0.1.6.12.8",
   "summary": "BM Private Pods.",
   "description": "BirdMichal 日常所用到一些私有分类等 -- Private Pods",
   "homepage": "https://github.com/birdmichael/BMPrivatePods",
@@ -13,11 +13,12 @@
   },
   "source": {
     "git": "https://github.com/birdmichael/BMPrivatePods.git",
-    "tag": "0.1.6.12.2"
+    "tag": "0.1.6.12.8"
   },
   "platforms": {
     "ios": "8.0"
   },
+  "public_header_files": "BMPrivatePods/BMPrivatePods/BMPrivatePodsHeader.h",
   "source_files": "BMPrivatePods/BMPrivatePods/**/*",
   "frameworks": [
     "UIKit",
@@ -38,6 +39,11 @@
     },
     {
       "name": "UIKit",
+      "dependencies": {
+        "BMPrivatePods/UIColor": [
+
+        ]
+      },
       "source_files": "BMPrivatePods/BMPrivatePods/UIKit/**/*"
     },
     {

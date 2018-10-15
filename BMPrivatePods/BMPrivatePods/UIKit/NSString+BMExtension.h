@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param limitedLine 设置label numberOfLines已计算尺寸
  */
 - (CGSize)bm_sizeWithMaxsize:(CGSize)size font:(UIFont *)font limitedLine:(NSUInteger)limitedLine;
+
++ (NSString *)bm_md5String:(NSString *)str;
+
+- (NSString *)bm_md5;
+- (BOOL)equalsString:(NSString *)str;
 @end
 
 NS_ASSUME_NONNULL_END

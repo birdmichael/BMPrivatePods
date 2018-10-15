@@ -142,10 +142,6 @@
 #define BM_Is_Empty_Sty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref)isEqualToString:@""]))
 #define BM_Is_Empty_Array(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref) count] == 0))
 #define BM_S_TO_URL(url) [NSURL URLWithString:url]
-#define BMString(str1,str2) [NSString stringWithFormat:@"%@%@",str1,str2]
-#define BMs_str(str1) [NSString stringWithFormat:@"%@",str1]
-#define BMs_Num(num1) [NSString stringWithFormat:@"%d",num1]
-#define BMs_Integer(num1) [NSString stringWithFormat:@"%ld",num1]
 
 #pragma mark ——— BMLOG
 /** 输出*/
