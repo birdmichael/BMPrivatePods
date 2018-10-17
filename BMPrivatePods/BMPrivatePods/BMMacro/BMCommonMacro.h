@@ -28,7 +28,7 @@
 #define kBMSCREEN_HEIGHT   [[UIScreen mainScreen] bounds].size.height
 
 //Appdelegate
-#define kBMAppDelegate     (AppDelegate *)([UIApplication sharedApplication].delegate)
+#define kBMAppDelegate     (AppDelegate *)[[UIApplication sharedApplication] delegate]
 #define kBMFileManager [NSFileManager defaultManager]
 #define kBMUserDefaults   [NSUserDefaults standardUserDefaults]
 #define kBMUserDefaultsGET(KEY)     [[NSUserDefaults standardUserDefaults]objectForKey:KEY]
