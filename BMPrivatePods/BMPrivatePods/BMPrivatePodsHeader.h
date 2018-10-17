@@ -12,6 +12,7 @@
 #import "BMSwizzleMethodDeploy.h"
 #import "UIColorHeader.h"
 #import "BMCategoryExtension.h"
+#import "BMCFunctionsHeader.h"
 
 
 
