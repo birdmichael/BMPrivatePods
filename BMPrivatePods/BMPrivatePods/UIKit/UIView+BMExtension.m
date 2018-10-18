@@ -109,4 +109,222 @@
              completion:completionHandler];
     }];
 }
+
+
+#pragma mark ——— frame
+- (CGFloat)bm_Width{
+    return self.frame.size.width;
+}
+
+- (void)setBm_Width:(CGFloat)bm_Width {
+    CGRect rect = self.frame;
+    rect.size.width = bm_Width;
+    self.frame = rect;
+}
+
+- (CGFloat)bm_Height {
+    return self.frame.size.height;
+}
+- (void)setBm_Height:(CGFloat)bm_Height {
+    CGRect rect = self.frame;
+    rect.size.height = bm_Height;
+    self.frame = rect;
+}
+
+
+- (CGFloat)bm_RightEdge {
+    return self.frame.origin.x + self.frame.size.width;
+}
+- (void)setBm_RightEdge:(CGFloat)bm_RightEdge {
+    CGRect rect = self.frame;
+    rect.origin.x = bm_RightEdge - rect.size.width;
+    self.frame = rect;
+}
+
+- (CGFloat)bm_BottomEdge
+{
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (void)setBm_BottomEdge:(CGFloat)viewBottomEdge
+{
+    CGRect rect = self.frame;
+    rect.origin.y = viewBottomEdge - rect.size.height;
+    self.frame = rect;
+}
+
+- (CGFloat)bm_Y
+{
+    return self.frame.origin.y;
+}
+
+- (void)setBm_Y:(CGFloat)viewY
+{
+    CGRect rect = self.frame;
+    rect.origin.y = viewY;
+    self.frame = rect;
+}
+
+- (CGFloat)bm_CenterX {
+    return self.center.x;
+}
+
+- (void)setBm_CenterX:(CGFloat)viewCenterX {
+    CGPoint center = self.center;
+    center.x = viewCenterX;
+    self.center = center;
+}
+
+- (CGFloat)bm_CenterY {
+    return self.center.y;
+}
+
+- (void)setBm_CenterY:(CGFloat)viewCenterY {
+    CGPoint center = self.center;
+    center.y = viewCenterY;
+    self.center = center;
+}
+
+- (void)setBm_X:(CGFloat)viewX
+{
+    CGRect rect = self.frame;
+    rect.origin.x = viewX;
+    self.frame = rect;
+}
+
+- (CGFloat)bm_X
+{
+    return self.frame.origin.x;
+}
+
+- (void)setBm_Size:(CGSize)viewSize
+{
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, viewSize.width, viewSize.height);
+}
+
+- (CGSize)bm_Size
+{
+    return self.frame.size;
+}
+
+- (void)setBm_Origin:(CGPoint)viewOrigin
+{
+    self.frame = CGRectMake(viewOrigin.x, viewOrigin.y, self.frame.size.width, self.frame.size.height);
+}
+
+- (CGPoint)bm_Origin
+{
+    return self.frame.origin;
+}
+
+- (CGFloat)bm_HalfWidth {
+    return CGRectGetWidth(self.bounds) / 2.0;
+}
+
+- (CGFloat)bm_HalfHeight {
+    return CGRectGetHeight(self.bounds) / 2.0;
+}
+
+- (CGPoint)bm_boundsCenter{
+    return CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+}
+
+- (void)bm_frameIntegral{
+    self.frame = CGRectIntegral(self.frame);
+}
+
+- (CGPoint)bm_leftBottomCorner
+{
+    return CGPointMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
+}
+
+- (CGPoint)bm_leftTopCorner
+{
+    return self.frame.origin;
+}
+
+- (CGPoint)bm_rightTopCorner
+{
+    return CGPointMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y);
+}
+
+- (CGPoint)bm_rightBottomCorner
+{
+    return CGPointMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y + self.frame.size.height);
+}
+
+//-------------------------
+#pragma mark View Alignment
+//-------------------------
+
+-(void)bm_align:( BMViewAlignment)alignment relativeToPoint:(CGPoint)point{
+    switch (alignment) {
+        case  BMViewAlignmentTopLeft:
+            self.bm_Origin = CGPointMake(point.x, point.y);
+            break;
+        case  BMViewAlignmentTopCenter:
+            self.bm_Origin = CGPointMake(point.x-self.bm_Width/2, point.y);
+            break;
+        case  BMViewAlignmentTopRight:
+            self.bm_Origin = CGPointMake(point.x-self.bm_Width, point.y);
+            break;
+        case  BMViewAlignmentMiddleLeft:
+            self.bm_Origin = CGPointMake(point.x, point.y-self.bm_Height/2);
+            break;
+        case  BMViewAlignmentCenter:
+            self.center     = CGPointMake(point.x, point.y);
+            break;
+        case  BMViewAlignmentMiddleRight:
+            self.bm_Origin = CGPointMake(point.x-self.bm_Width, point.y-self.bm_Height/2);
+            break;
+        case  BMViewAlignmentBottomLeft:
+            self.bm_Origin = CGPointMake(point.x, point.y-self.bm_Height);
+            break;
+        case  BMViewAlignmentBottomCenter:
+            self.bm_Origin = CGPointMake(point.x-self.bm_Width/2, point.y-self.bm_Height);
+            break;
+        case  BMViewAlignmentBottomRight:
+            self.bm_Origin = CGPointMake(point.x-self.bm_Width, point.y-self.bm_Height);
+            break;
+        default:
+            break;
+    }
+}
+
+
+-(void)bm_align:( BMViewAlignment)alignment relativeToRect:(CGRect)rect{
+    CGPoint point = CGPointZero;
+    switch (alignment){
+        case  BMViewAlignmentTopLeft:
+            point = rect.origin;
+            break;
+        case  BMViewAlignmentTopCenter:
+            point = CGPointMake(rect.origin.x+rect.size.width/2, rect.origin.y);
+            break;
+        case  BMViewAlignmentTopRight:
+            point = CGPointMake(rect.origin.x+rect.size.width, rect.origin.y);
+            break;
+        case  BMViewAlignmentMiddleLeft:
+            point = CGPointMake(rect.origin.x, rect.origin.y +rect.size.height/2);
+            break;
+        case  BMViewAlignmentCenter:
+            point = CGPointMake(rect.origin.x+rect.size.width/2, rect.origin.y+rect.size.height/2);
+            break;
+        case  BMViewAlignmentMiddleRight:
+            point = CGPointMake(rect.origin.x+rect.size.width, rect.origin.y+rect.size.height/2);
+            break;
+        case  BMViewAlignmentBottomLeft:
+            point = CGPointMake(rect.origin.x, rect.origin.y+rect.size.height);
+            break;
+        case  BMViewAlignmentBottomCenter:
+            point = CGPointMake(rect.origin.x+rect.size.width/2, rect.origin.y+rect.size.height);
+            break;
+        case  BMViewAlignmentBottomRight:
+            point = CGPointMake(rect.origin.x+rect.size.width, rect.origin.y+rect.size.height);
+            break;
+        default:
+            return;
+    }
+    [self bm_align:alignment relativeToPoint:point];
+}
 @end
