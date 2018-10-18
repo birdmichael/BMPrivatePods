@@ -43,6 +43,22 @@ BOOL BMStringNil(id obj) {
     return YES;
 }
 
+BOOL BMAttributedStringNil(id obj) {
+    if (!obj) return YES;
+    if ([obj isKindOfClass:[NSAttributedString class]]) {
+        NSString *string = [(NSAttributedString *)obj string];
+        if (string.length == 0
+            || [string compare:@"null" options:NSCaseInsensitiveSearch] == NSOrderedSame
+            || [string compare:@"<null>" options:NSCaseInsensitiveSearch] == NSOrderedSame
+            || [string compare:@"nil" options:NSCaseInsensitiveSearch] == NSOrderedSame
+            || [string compare:@"<nil>" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
+            return YES;
+        }
+        return NO;
+    }
+    return YES;
+}
+
 
 NSString *BMDefultString(id string, NSString *def) {
     if (BMStringNil(string)) {
