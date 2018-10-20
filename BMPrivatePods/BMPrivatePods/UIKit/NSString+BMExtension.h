@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGSize)bm_sizeWithMaxsize:(CGSize)size font:(UIFont *)font limitedLine:(NSUInteger)limitedLine;
 
 + (NSString *)bm_md5String:(NSString *)str;
++ (NSString *)bm_timeIntervalToMMSSFormat:(NSTimeInterval)interval;
 
 - (NSString *)bm_md5;
 - (BOOL)equalsString:(NSString *)str;

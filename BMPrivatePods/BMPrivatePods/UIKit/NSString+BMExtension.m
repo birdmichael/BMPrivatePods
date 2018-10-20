@@ -63,6 +63,12 @@ static UILabel *bmSizeLabel = nil;
 {
     return [NSString bm_md5String:self];
 }
++ (NSString *)bm_timeIntervalToMMSSFormat:(NSTimeInterval)interval {
+    NSInteger ti = (NSInteger)interval;
+    NSInteger seconds = ti % 60;
+    NSInteger minutes = (ti / 60) % 60;
+    return [NSString stringWithFormat:@"%02ld:%02ld", (long)minutes, (long)seconds];
+}
 
 - (BOOL)equalsString:(NSString *)str
 {
