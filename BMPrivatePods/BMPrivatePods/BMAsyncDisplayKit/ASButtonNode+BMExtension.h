@@ -5,7 +5,7 @@
 //  Created by BirdMichael on 2018/10/23.
 //  Copyright © 2018 BirdMichael. All rights reserved.
 //
-#if __has_include(<AsyncDisplayKit/ASButtonNode.h>)
+#if __has_include("ASButtonNode.h")
 #import "ASButtonNode.h"
 NS_ASSUME_NONNULL_BEGIN
 
