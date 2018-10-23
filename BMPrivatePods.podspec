@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BMPrivatePods'
-  s.version          = '0.1.6.15.4'
+  s.version          = '0.1.6.15.5'
   s.summary          = 'BM Private Pods.'
 
 # This description is used to generate tags and improve search results.
@@ -57,9 +57,9 @@ BirdMichal 日常所用到一些私有分类等 -- Private Pods
        ls.dependency 'BMPrivatePods/BMSafeNil'
        ls.source_files = 'BMPrivatePods/BMPrivatePods/BMSwizzleMethod/**/*'
    end
-   s.subspec 'BMASDK' do |ls|
-       ls.dependency 'BMPrivatePods/BMASDK'
-       ls.source_files = 'BMPrivatePods/BMPrivatePods/BMASDK/**/*'
+   s.subspec 'BMAsyncDisplayKit' do |ls|
+       ls.dependency 'BMPrivatePods/BMAsyncDisplayKit'
+       ls.source_files = 'BMPrivatePods/BMPrivatePods/BMAsyncDisplayKit/**/*'
    end
    
   # s.resource_bundles = {

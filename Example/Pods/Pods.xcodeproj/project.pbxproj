@@ -572,15 +572,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		012F10BA217F36BE005F6F0A /* BMASDK */ = {
+		012F10BA217F36BE005F6F0A /* BMAsyncDisplayKit */ = {
 			isa = PBXGroup;
 			children = (
 				012F10BB217F36BE005F6F0A /* ASButtonNode+BMExtension.h */,
 				012F10BC217F36BE005F6F0A /* BMASDKHeader.h */,
 				012F10BD217F36BE005F6F0A /* ASButtonNode+BMExtension.m */,
 			);
-			name = BMASDK;
-			path = BMPrivatePods/BMPrivatePods/BMASDK;
+			name = BMAsyncDisplayKit;
+			path = BMPrivatePods/BMPrivatePods/BMAsyncDisplayKit;
 			sourceTree = "<group>";
 		};
 		08D965B0F9B0084EEFBE7A581FFDD562 /* Pods */ = {
@@ -645,7 +645,7 @@
 		4F8D6ADB6FE48E35CCFC95C3817F07C3 /* BMPrivatePods */ = {
 			isa = PBXGroup;
 			children = (
-				012F10BA217F36BE005F6F0A /* BMASDK */,
+				012F10BA217F36BE005F6F0A /* BMAsyncDisplayKit */,
 				7791B6C01CBA817A75C32F976F4131C4 /* BMPrivatePodsHeader.h */,
 				B78C21CFE5C91875F62174B23396E040 /* BMCFunctions */,
 				2AD4E86D71755046D870ABED563C249B /* BMMacro */,
