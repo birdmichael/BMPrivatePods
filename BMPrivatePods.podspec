@@ -67,6 +67,7 @@ BirdMichal 日常所用到一些私有分类等 -- Private Pods
   # }
 
 #   s.public_header_files = 'Pod/BMPrivatePods/**/*.h'
-  s.frameworks = 'UIKit','Foundation','Texture'
+  s.frameworks = 'UIKit','Foundation'
+  
   # s.dependency 'AFNetworking', '~> 2.3'
 end
