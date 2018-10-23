@@ -58,7 +58,7 @@ BirdMichal 日常所用到一些私有分类等 -- Private Pods
        ls.source_files = 'BMPrivatePods/BMPrivatePods/BMSwizzleMethod/**/*'
    end
    s.subspec 'BMAsyncDisplayKit' do |ls|
-       ls.dependency 'Texture'
+       ls.dependency 'Texture/Core'
        ls.source_files = 'BMPrivatePods/BMPrivatePods/BMAsyncDisplayKit/**/*'
    end
    
