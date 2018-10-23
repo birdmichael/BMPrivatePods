@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BMPrivatePods'
-  s.version          = '0.1.6.15.6'
+  s.version          = '0.1.6.15.7'
   s.summary          = 'BM Private Pods.'
 
 # This description is used to generate tags and improve search results.
@@ -58,6 +58,7 @@ BirdMichal 日常所用到一些私有分类等 -- Private Pods
        ls.source_files = 'BMPrivatePods/BMPrivatePods/BMSwizzleMethod/**/*'
    end
    s.subspec 'BMAsyncDisplayKit' do |ls|
+       ls.dependency 'Texture'
        ls.source_files = 'BMPrivatePods/BMPrivatePods/BMAsyncDisplayKit/**/*'
    end
    
@@ -66,6 +67,6 @@ BirdMichal 日常所用到一些私有分类等 -- Private Pods
   # }
 
 #   s.public_header_files = 'Pod/BMPrivatePods/**/*.h'
-  s.frameworks = 'UIKit','Foundation'
+  s.frameworks = 'UIKit','Foundation','Texture'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
