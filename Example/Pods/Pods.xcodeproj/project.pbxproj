@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0101347F217F52EF0042685E /* ASButtonNode+BMExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 0101347C217F52EE0042685E /* ASButtonNode+BMExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01013480217F52EF0042685E /* ASButtonNode+BMExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 0101347C217F52EE0042685E /* ASButtonNode+BMExtension.h */; };
-		01013481217F52EF0042685E /* BMASDKHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0101347D217F52EE0042685E /* BMASDKHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01013482217F52EF0042685E /* BMASDKHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0101347D217F52EE0042685E /* BMASDKHeader.h */; };
-		01013483217F52EF0042685E /* ASButtonNode+BMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0101347E217F52EE0042685E /* ASButtonNode+BMExtension.m */; };
-		01013484217F52EF0042685E /* ASButtonNode+BMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0101347E217F52EE0042685E /* ASButtonNode+BMExtension.m */; };
 		01F12825C64C007A826EB86FB5426832 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DBCC94FB5AC05773E7D4C0CB9585A7 /* Foundation.framework */; };
 		01F278A54C85C2C865DDAD4090C559B6 /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E348D84229E9000F93233339AFC317B /* EXPDoubleTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03890D59600D45E6E9463700F9B11FFE /* XCTestCase+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = 7085F5CB16BF96F625D6465A4DA29F6F /* XCTestCase+Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -271,9 +265,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0101347C217F52EE0042685E /* ASButtonNode+BMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASButtonNode+BMExtension.h"; sourceTree = "<group>"; };
-		0101347D217F52EE0042685E /* BMASDKHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMASDKHeader.h; sourceTree = "<group>"; };
-		0101347E217F52EE0042685E /* ASButtonNode+BMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASButtonNode+BMExtension.m"; sourceTree = "<group>"; };
 		0160D7EDEB19856BC505CA9E9075EC06 /* SPTGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTGlobalBeforeAfterEach.h; path = Specta/Specta/SPTGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
 		03E5B7234B07F25C9ABA9B88E97BB716 /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Specta.modulemap; sourceTree = "<group>"; };
 		04EA89D3B18B823DA83AA51363C54F01 /* UIColor+BMHEX.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+BMHEX.h"; sourceTree = "<group>"; };
@@ -572,17 +563,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0101347B217F52EE0042685E /* BMAsyncDisplayKit */ = {
-			isa = PBXGroup;
-			children = (
-				0101347C217F52EE0042685E /* ASButtonNode+BMExtension.h */,
-				0101347D217F52EE0042685E /* BMASDKHeader.h */,
-				0101347E217F52EE0042685E /* ASButtonNode+BMExtension.m */,
-			);
-			name = BMAsyncDisplayKit;
-			path = BMPrivatePods/BMPrivatePods/BMAsyncDisplayKit;
-			sourceTree = "<group>";
-		};
 		08D965B0F9B0084EEFBE7A581FFDD562 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,7 +625,6 @@
 		4F8D6ADB6FE48E35CCFC95C3817F07C3 /* BMPrivatePods */ = {
 			isa = PBXGroup;
 			children = (
-				0101347B217F52EE0042685E /* BMAsyncDisplayKit */,
 				7791B6C01CBA817A75C32F976F4131C4 /* BMPrivatePodsHeader.h */,
 				B78C21CFE5C91875F62174B23396E040 /* BMCFunctions */,
 				2AD4E86D71755046D870ABED563C249B /* BMMacro */,
@@ -1077,8 +1056,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				25C23D43E39C5DA9F2B204F080D852D5 /* Pods-BMPrivatePods_Example-umbrella.h in Headers */,
-				01013480217F52EF0042685E /* ASButtonNode+BMExtension.h in Headers */,
-				01013482217F52EF0042685E /* BMASDKHeader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1107,8 +1084,6 @@
 				CE1B30E6BFF107128641ACC884E8D860 /* UIColorHeader.h in Headers */,
 				258444C61746808C6597EDA65C2CF502 /* UIControl+BMExtension.h in Headers */,
 				C123C4DF43B89782C916192026523CFA /* UIFont+BMFItSize.h in Headers */,
-				0101347F217F52EF0042685E /* ASButtonNode+BMExtension.h in Headers */,
-				01013481217F52EF0042685E /* BMASDKHeader.h in Headers */,
 				EC903A824C4064E63218D16806D05184 /* UIImage+Extension.h in Headers */,
 				9A215065634885A2D29A6BB89F433F6A /* UILabel+BMExtension.h in Headers */,
 				EB83746DE5111566ADD7BCE63F817A1C /* UIScreen+BMExtension.h in Headers */,
@@ -1365,7 +1340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9369D717C18CF91EA410DB747D4CB92 /* BMDataTypesFunctionC.m in Sources */,
-				01013483217F52EF0042685E /* ASButtonNode+BMExtension.m in Sources */,
 				4E7F901FD311BF9CBD2379C6627C682F /* BMMethodSwizzling.m in Sources */,
 				09FB14B30E14AE4F5ED9E27D1DC8CB46 /* BMPrivatePods-dummy.m in Sources */,
 				E3A048E2D1F1A4E6B97BDE72B28F3586 /* BMUIFunctionC.m in Sources */,
@@ -1424,7 +1398,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01013484217F52EF0042685E /* ASButtonNode+BMExtension.m in Sources */,
 				45AFCB64AE612D520A911D93065786DD /* Pods-BMPrivatePods_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
