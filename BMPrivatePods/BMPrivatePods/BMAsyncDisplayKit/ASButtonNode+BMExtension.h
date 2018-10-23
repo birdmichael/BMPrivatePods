@@ -5,7 +5,9 @@
 //  Created by BirdMichael on 2018/10/23.
 //  Copyright © 2018 BirdMichael. All rights reserved.
 //
-#import "ASButtonNode.h"
+#if __has_include(<AsyncDisplayKit/ASButtonNode.h>)
+
+#import <AsyncDisplayKit/ASButtonNode.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ASButtonNode (BMExtension)
@@ -14,4 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif
 

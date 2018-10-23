@@ -5,7 +5,7 @@
 //  Created by BirdMichael on 2018/10/23.
 //  Copyright © 2018 BirdMichael. All rights reserved.
 //
-
+#if __has_include(<AsyncDisplayKit/ASButtonNode.h>)
 #import "ASButtonNode+BMExtension.h"
 @implementation ASButtonNode (BMExtension)
 - (UIEdgeInsets)bm_touchAreaInsets
@@ -31,3 +31,5 @@
     return CGRectContainsPoint(bounds, point);
 }
 @end
+#endif
+
