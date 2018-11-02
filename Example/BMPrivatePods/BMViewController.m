@@ -10,6 +10,7 @@
 #import "BMPrivatePodsHeader.h"
 #import "UIButton+BMExtension.h"
 #import "BMCFunctionsHeader.h"
+#import "BMCommonMacro.h"
 
 
 @interface BMViewController (){
@@ -33,6 +34,7 @@
         btn.bm_badgeValue= BMString(@(text), nil);
     }];
     [self.view addSubview:btn];
+    @s
     
 
     [super viewDidLoad];
