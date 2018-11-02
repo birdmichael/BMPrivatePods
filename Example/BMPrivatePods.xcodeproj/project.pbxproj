@@ -327,7 +327,7 @@
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = AQ85KA384Z;
+						DevelopmentTeam = TMJHR67HJ2;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -690,7 +690,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = AQ85KA384Z;
+				DEVELOPMENT_TEAM = TMJHR67HJ2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BMPrivatePods/BMPrivatePods-Prefix.pch";
 				INFOPLIST_FILE = "BMPrivatePods/BMPrivatePods-Info.plist";
@@ -708,7 +708,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = AQ85KA384Z;
+				DEVELOPMENT_TEAM = TMJHR67HJ2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BMPrivatePods/BMPrivatePods-Prefix.pch";
 				INFOPLIST_FILE = "BMPrivatePods/BMPrivatePods-Info.plist";

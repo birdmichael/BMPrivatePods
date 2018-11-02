@@ -7,7 +7,6 @@
 //
 
 #import "BMViewController.h"
-#import "UIButton+BMExtension.h"
 #import "BMCFunctionsHeader.h"
 #import "BMCommonMacro.h"
 #import "BMPrivatePodsHeader.h"
@@ -24,7 +23,6 @@
 - (void)viewDidLoad
 {
 
-    BMWeakify(self);
     
     
 
