@@ -14,12 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval
                                      target:(id)target
                                    selector:(SEL)selector
-                                   userInfo:(id)userInfo
+                                   userInfo:(nullable id)userInfo
                                     repeats:(BOOL)repeats;
 
 + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval
                                       block:(BMTimerBlock)block
-                                   userInfo:(id)userInfo
+                                   userInfo:(nullable id)userInfo
                                     repeats:(BOOL)repeats;
 @end
 
