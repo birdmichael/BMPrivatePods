@@ -7,10 +7,10 @@
 //
 
 #import "BMViewController.h"
-#import "BMPrivatePodsHeader.h"
 #import "UIButton+BMExtension.h"
 #import "BMCFunctionsHeader.h"
 #import "BMCommonMacro.h"
+#import "BMPrivatePodsHeader.h"
 
 
 @interface BMViewController (){
@@ -23,18 +23,9 @@
 
 - (void)viewDidLoad
 {
- 
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 100, 30 , 30);
-    btn.backgroundColor = [UIColor redColor];
-    btn.bm_badgeValue = @"0";
-    static NSUInteger text = 0;
-    [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        text++;
-        btn.bm_badgeValue= BMString(@(text), nil);
-    }];
-    [self.view addSubview:btn];
-    @s
+
+    BMWeakify(self);
+    
     
 
     [super viewDidLoad];

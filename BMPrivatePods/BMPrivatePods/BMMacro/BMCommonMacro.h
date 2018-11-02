@@ -176,24 +176,6 @@
 #define BM_IMAGE_STRETCH_IMG(image,w,h) [(image) stretchableImageWithLeftCapWidth:(image.size.width*(w)) topCapHeight:image.size.height*(h)]?:[UIImage new]
 #define BMImageName(name)          [UIImage imageNamed:(name)]
 
-#define weakify(...) \
-try {} @finally {} \
-macro_dispatcher(weakify, __VA_ARGS__)(__VA_ARGS__)
-
-#define unsafeify(...) \
-try {} @finally {} \
-macro_dispatcher(unsafeify, __VA_ARGS__)(__VA_ARGS__)
-
-#define strongify(...) \
-try {} @finally {} \
-macro_dispatcher(strongify, __VA_ARGS__)(__VA_ARGS__)
-
-#define va_num_args(...) va_num_args_impl(__VA_ARGS__, 5,4,3,2,1)
-#define va_num_args_impl(_1,_2,_3,_4,_5,N,...) N
-
-#define macro_dispatcher(func, ...) macro_dispatcher_(func, va_num_args(__VA_ARGS__))
-#define macro_dispatcher_(func, nargs) macro_dispatcher__(func, nargs)
-#define macro_dispatcher__(func, nargs) func ## nargs
 
 // unaviable designed initializer
 // UIView
