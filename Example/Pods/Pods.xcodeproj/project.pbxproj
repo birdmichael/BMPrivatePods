@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011455C5219979AA00650609 /* BMUserDefaultUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 011455C3219979AA00650609 /* BMUserDefaultUtil.h */; };
+		011455C6219979AA00650609 /* BMUserDefaultUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 011455C4219979AA00650609 /* BMUserDefaultUtil.m */; };
+		011455C921997BF500650609 /* BMDateUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 011455C721997BF500650609 /* BMDateUtil.h */; };
+		011455CA21997BF500650609 /* BMDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 011455C821997BF500650609 /* BMDateUtil.m */; };
 		01813B32218C3D0B00BCA3A2 /* BMTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 01813B30218C3D0B00BCA3A2 /* BMTimer.h */; };
 		01813B33218C3D0B00BCA3A2 /* BMTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 01813B30218C3D0B00BCA3A2 /* BMTimer.h */; };
 		01813B34218C3D0B00BCA3A2 /* BMTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01813B31218C3D0B00BCA3A2 /* BMTimer.m */; };
@@ -269,6 +273,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		011455C3219979AA00650609 /* BMUserDefaultUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMUserDefaultUtil.h; sourceTree = "<group>"; };
+		011455C4219979AA00650609 /* BMUserDefaultUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMUserDefaultUtil.m; sourceTree = "<group>"; };
+		011455C721997BF500650609 /* BMDateUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDateUtil.h; sourceTree = "<group>"; };
+		011455C821997BF500650609 /* BMDateUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDateUtil.m; sourceTree = "<group>"; };
 		0160D7EDEB19856BC505CA9E9075EC06 /* SPTGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTGlobalBeforeAfterEach.h; path = Specta/Specta/SPTGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
 		01813B30218C3D0B00BCA3A2 /* BMTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMTimer.h; sourceTree = "<group>"; };
 		01813B31218C3D0B00BCA3A2 /* BMTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMTimer.m; sourceTree = "<group>"; };
@@ -576,6 +584,10 @@
 				01813B30218C3D0B00BCA3A2 /* BMTimer.h */,
 				01813B31218C3D0B00BCA3A2 /* BMTimer.m */,
 				01813B36218C3DF100BCA3A2 /* BMHelperHeader.h */,
+				011455C3219979AA00650609 /* BMUserDefaultUtil.h */,
+				011455C4219979AA00650609 /* BMUserDefaultUtil.m */,
+				011455C721997BF500650609 /* BMDateUtil.h */,
+				011455C821997BF500650609 /* BMDateUtil.m */,
 			);
 			name = BMHelper;
 			path = BMPrivatePods/BMPrivatePods/BMHelper;
@@ -1096,6 +1108,7 @@
 				8891CC70DE9B0D1DE9FE00A608836F60 /* NSDictionary+SafeNil.h in Headers */,
 				B9770782C5AD8881B21DB1080D9150C5 /* NSMutableArray+SafeNil.h in Headers */,
 				B9E1F950D76BCE01F39F9AD3CF3DFB5E /* NSMutableDictionary+SafeNil.h in Headers */,
+				011455C5219979AA00650609 /* BMUserDefaultUtil.h in Headers */,
 				6836B5BDA8CF861BE5E1924932349A1C /* NSString+BMExtension.h in Headers */,
 				5316BA5575DB9F75E4F5EAAA81913331 /* UIButton+BMExtension.h in Headers */,
 				CB8224A74B9BE022C559A321E120E64C /* UIColor+BMGradient.h in Headers */,
@@ -1103,6 +1116,7 @@
 				01813B32218C3D0B00BCA3A2 /* BMTimer.h in Headers */,
 				9BCC40509744A06BD849DCE285C9DF04 /* UIColor+BMRandom.h in Headers */,
 				CE1B30E6BFF107128641ACC884E8D860 /* UIColorHeader.h in Headers */,
+				011455C921997BF500650609 /* BMDateUtil.h in Headers */,
 				258444C61746808C6597EDA65C2CF502 /* UIControl+BMExtension.h in Headers */,
 				C123C4DF43B89782C916192026523CFA /* UIFont+BMFItSize.h in Headers */,
 				EC903A824C4064E63218D16806D05184 /* UIImage+Extension.h in Headers */,
@@ -1360,6 +1374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011455C6219979AA00650609 /* BMUserDefaultUtil.m in Sources */,
 				01813B34218C3D0B00BCA3A2 /* BMTimer.m in Sources */,
 				A9369D717C18CF91EA410DB747D4CB92 /* BMDataTypesFunctionC.m in Sources */,
 				4E7F901FD311BF9CBD2379C6627C682F /* BMMethodSwizzling.m in Sources */,
@@ -1369,6 +1384,7 @@
 				0B867F734AB70E9E61AD9A90282A2059 /* NSDictionary+SafeNil.m in Sources */,
 				F036885F6F47A58967FB3D8994FF1E84 /* NSMutableArray+SafeNil.m in Sources */,
 				DE5AD4F4564B90A5B7611BE2DC57A5B9 /* NSMutableDictionary+SafeNil.m in Sources */,
+				011455CA21997BF500650609 /* BMDateUtil.m in Sources */,
 				95B70CB7EFE1664BE71C2E98F8C73A18 /* NSString+BMExtension.m in Sources */,
 				1708BE7033186CE347DF9C08B65FC5F7 /* UIButton+BMExtension.m in Sources */,
 				240F4BFFA5615418EA4B7779410DFDA4 /* UIColor+BMGradient.m in Sources */,

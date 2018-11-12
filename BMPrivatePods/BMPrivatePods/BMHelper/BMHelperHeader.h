@@ -8,5 +8,6 @@
 #ifndef BMHelperHeader_h
 #define BMHelperHeader_h
 #import "BMTimer.h"
+#import "BMUtil.h"
 
 #endif /* BMHelperHeader_h */
