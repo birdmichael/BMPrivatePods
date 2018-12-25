@@ -7,9 +7,7 @@
 //
 
 #import "BMViewController.h"
-#import "BMCFunctionsHeader.h"
 #import "BMCommonMacro.h"
-#import "BMPrivatePodsHeader.h"
 
 
 @interface BMViewController (){
@@ -27,7 +25,9 @@
     
 
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    BOOL isx = BM_IS_IPHONEX_All;
+    NSLog(@"%@",BM_IS_IPHONEX_ALL);
     
 }
 

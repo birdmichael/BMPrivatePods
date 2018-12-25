@@ -60,7 +60,7 @@
 #define kBMNavBarHeight 44.0
 #define kBMTabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
 #define kBMTopHeight (kBMStatusBarHeight + kBMNavBarHeight)
-#define kMSafeBottomHeight (BM_IS_IPHONEX ? 34 : 0)
+#define kBMSafeBottomHeight (BM_IS_IPHONEX ? 34 : 0)
 
 // some_height
 #define kBMEnglishKeyboardHeight  (216.f)
@@ -131,6 +131,9 @@
 #define BMiOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
 #define BM_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define BM_IS_IPHONEX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define BM_IS_IPHONEX_MAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+#define BM_IS_IPHONEX_All ([UIScreen mainScreen].bounds.size.height == 812 || [UIScreen mainScreen].bounds.size.height == 896)
+
 
 
 #define BM_SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
