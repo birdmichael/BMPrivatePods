@@ -60,7 +60,7 @@
 #define kBMNavBarHeight 44.0
 #define kBMTabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
 #define kBMTopHeight (kBMStatusBarHeight + kBMNavBarHeight)
-#define kBMSafeBottomHeight (BM_IS_IPHONEX ? 34 : 0)
+#define kBMSafeBottomHeight (BM_IS_IPHONEX_All ? 34 : 0)
 
 // some_height
 #define kBMEnglishKeyboardHeight  (216.f)
