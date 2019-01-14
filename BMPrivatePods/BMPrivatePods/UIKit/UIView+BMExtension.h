@@ -67,6 +67,7 @@ typedef enum{
 //position the view relative to a rectangle
 -(void)bm_align:(BMViewAlignment)alignment relativeToRect:(CGRect)rect;
 
+- (void)bm_setMaskLayerFrame:(CGRect)frame corner:(UIRectCorner)corner cornerRadius:(CGFloat)radius;
 @end
 
 NS_ASSUME_NONNULL_END

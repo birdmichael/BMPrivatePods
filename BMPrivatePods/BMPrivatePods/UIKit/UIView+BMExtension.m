@@ -327,4 +327,13 @@
     }
     [self bm_align:alignment relativeToPoint:point];
 }
+
+
+- (void)bm_setMaskLayerFrame:(CGRect)frame corner:(UIRectCorner)corner cornerRadius:(CGFloat)radius {
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:frame byRoundingCorners:corner cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = frame;
+    maskLayer.path = bezierPath.CGPath;
+    self.layer.mask = maskLayer;
+}
 @end
