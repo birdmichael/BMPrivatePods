@@ -10,5 +10,6 @@
 #import "BMTimer.h"
 #import "BMUserDefaultUtil.h"
 #import "BMDateUtil.h"
+#import "BMStringUtil.h"
 
 #endif /* BMHelperHeader_h */
