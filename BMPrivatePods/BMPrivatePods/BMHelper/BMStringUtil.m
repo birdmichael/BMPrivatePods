@@ -100,8 +100,18 @@
         NSString *time2 = [[date description] substringWithRange:(NSRange){5,11}];
         if ([dateString isEqualToString:todayString]){
             //今天
-            dateContent = [NSString stringWithFormat:@"%@",time];
-            return dateContent;
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            int unit = NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+            NSDateComponents *cmp =  [calendar components:unit fromDate:date toDate:[NSDate date] options:0];
+            if (cmp.hour >= 12) {
+                return [NSString stringWithFormat:@"%@",time];
+            } else if (cmp.hour >= 1) {
+                return [NSString stringWithFormat:@"%ld小时之前",cmp.hour];
+            } else if (cmp.minute > 1){
+                return [NSString stringWithFormat:@"%ld分钟之前",cmp.minute];
+            } else {
+                return @"刚刚";
+            }
         } else if ([dateString isEqualToString:yesterdayString]){
             //昨天
             dateContent = [NSString stringWithFormat:@"昨天"];
