@@ -17,9 +17,9 @@
 }
 
 
-+ (BOOL)checkPassword:(NSString *)password;
++ (BOOL)checkPassword:(NSString *)password minCount:(NSUInteger)min maxCount:(NSUInteger)max
 {
-    NSString *pattern = @"/(?=.{8,16})(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*/;";
+    NSString *pattern = [NSString stringWithFormat:@"^(?=.*[a-zA-Z\\d])(?=.*[a-zA-Z\\W])(?=.*[\\d\\W]).{%lu,%lu}$",(unsigned long)min,(unsigned long)max];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
     BOOL isMatch = [pred evaluateWithObject:password];
     return isMatch;

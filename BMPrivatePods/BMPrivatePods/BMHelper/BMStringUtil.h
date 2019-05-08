@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 检查是否电话号码 */
 + (BOOL)checkPhoneNumber:(NSString *)phoneNumber;
 /** 检查是否是符合密码（任意-任意位数字和字母组合， 最少4位） */
-+ (BOOL)checkPassword:(NSString *)password;
++ (BOOL)checkPassword:(NSString *)password minCount:(NSUInteger)min maxCount:(NSUInteger)max;
 /** 检查是否位用户名（中文英文数字） */
 + (BOOL)checkUserName:(NSString *)userName count:(NSUInteger)count;
 /** 检查是否身份证 */

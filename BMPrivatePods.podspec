@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BMPrivatePods'
-  s.version          = '0.1.6.15.18'
+  s.version          = '0.1.6.15.19'
   s.summary          = 'BM Private Pods.'
 
 # This description is used to generate tags and improve search results.
@@ -31,34 +31,34 @@ BirdMichal 日常所用到一些私有分类等 -- Private Pods
   s.ios.deployment_target = '8.0'
 
   s.public_header_files = 'BMPrivatePods/BMPrivatePods/BMPrivatePodsHeader.h'
-  s.source_files = 'BMPrivatePods/BMPrivatePods/**/*'
+  s.source_files = 'BMPrivatePods/BMPrivatePods/*.{h,m}'
 
   s.subspec 'UIColor' do |uicolor|
-      uicolor.source_files = 'BMPrivatePods/BMPrivatePods/UIColor/**/*'
+      uicolor.source_files = 'BMPrivatePods/BMPrivatePods/UIColor/*.{h,m}'
       # uicolor.dependency
   end
   s.subspec 'BMMacro' do |s|
-      s.source_files = 'BMPrivatePods/BMPrivatePods/BMMacro/**/*'
+      s.source_files = 'BMPrivatePods/BMPrivatePods/BMMacro/*.{h,m}'
       # uicolor.dependency
   end
   s.subspec 'BMSafeNil' do |s|
-      s.source_files = 'BMPrivatePods/BMPrivatePods/BMSafeNil/**/*'
+      s.source_files = 'BMPrivatePods/BMPrivatePods/BMSafeNil/*.{h,m}'
       # uicolor.dependency
   end
   s.subspec 'UIKit' do |uiscreen|
       uiscreen.dependency 'BMPrivatePods/UIColor'
-      uiscreen.source_files = 'BMPrivatePods/BMPrivatePods/UIKit/**/*'
+      uiscreen.source_files = 'BMPrivatePods/BMPrivatePods/UIKit/*.{h,m}'
   end
    
    s.subspec 'BMCFunctions' do |s|
-       s.source_files = 'BMPrivatePods/BMPrivatePods/BMCFunctions/**/*'
+       s.source_files = 'BMPrivatePods/BMPrivatePods/BMCFunctions/*.{h,m}'
    end
    s.subspec 'BMSwizzleMethod' do |ls|
        ls.dependency 'BMPrivatePods/BMSafeNil'
-       ls.source_files = 'BMPrivatePods/BMPrivatePods/BMSwizzleMethod/**/*'
+       ls.source_files = 'BMPrivatePods/BMPrivatePods/BMSwizzleMethod/*.{h,m}'
    end
    s.subspec 'BMHelper' do |ls|
-       ls.source_files = 'BMPrivatePods/BMPrivatePods/BMHelper/**/*'
+       ls.source_files = 'BMPrivatePods/BMPrivatePods/BMHelper/*.{h,m}'
    end
    
   # s.resource_bundles = {
